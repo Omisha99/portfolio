@@ -44,11 +44,13 @@ export default function Gallery() {
           ))}
         </div>
       ) : (
-        <div className="expanded-image-wrapper">
+        <div className="expanded-image-wrapper" onClick={() => setSelectedImage(null)}>
           <img src={selectedImage.src} alt={selectedImage.title} className="expanded-image" />
-          <p className="modal-caption">{selectedImage.title}</p>
-          <button className="close-button" onClick={() => setSelectedImage(null)}>Close</button>
+          {/* <p className="modal-caption">{selectedImage.title}</p> */}
+          <button className="close-button" onClick={() => setSelectedImage(null)}>Go Back</button>
         </div>
+
+        
       )}
     </section>
   );

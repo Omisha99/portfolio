@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { FaUser, FaBriefcase, FaFileDownload, FaProjectDiagram, FaImages, FaEnvelope, FaHome, FaCode } from 'react-icons/fa';
+import { FaUser, FaBriefcase, FaFileDownload, FaImages, FaCog, FaEnvelope, FaHome, FaCode } from 'react-icons/fa';
 import '../App.css';
 import profile from '../assets/avatar.png';
 
@@ -35,14 +35,14 @@ export default function Sidebar() {
         <li className={activeId === 'about' ? 'sidebar-active' : ''}>
           <a href="#about" title="About"><FaUser /></a>
         </li>
-        <li className={activeId === 'skills' ? 'sidebar-active' : ''}>
-          <a href="#skills" title="Skills"><FaUser /></a>
-        </li>
         <li className={activeId === 'experience' ? 'sidebar-active' : ''}>
           <a href="#experience" title="Experience"><FaBriefcase /></a>
         </li>
         <li className={activeId === 'projects' ? 'sidebar-active' : ''}>
           <a href="#projects" title="Projects"><FaCode /></a>
+        </li>
+        <li className={activeId === 'skills' ? 'sidebar-active' : ''}>
+          <a href="#skills" title="Skills"><FaCog /></a>
         </li>
         <li className={activeId === 'gallery' ? 'sidebar-active' : ''}>
             <a href="#gallery" title="Gallery"><FaImages /></a>
