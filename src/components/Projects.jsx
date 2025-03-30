@@ -41,6 +41,8 @@ export default function Projects() {
   ];
 
   return (
+    <div data-aos="fade-up" data-aos-delay="200">
+
     <section className="projects-section" id="projects">
       <div className="projects-content">
         <h2 className="projects-heading">Projects</h2>
@@ -60,5 +62,6 @@ export default function Projects() {
         </div>
       </div>
     </section>
+      </div>
   );
 }

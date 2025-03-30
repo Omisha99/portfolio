@@ -2,6 +2,7 @@ import '../App.css';
 
 export default function About() {
   return (
+    <div data-aos="fade-up" data-aos-delay="200">
     <section className="about-section">
       <div className="about-content">
         <h2 className="about-heading">About Me</h2>
@@ -16,5 +17,6 @@ export default function About() {
         </p>
       </div>
     </section>
+    </div>
   );
 }

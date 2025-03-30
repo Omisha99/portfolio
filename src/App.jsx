@@ -2,6 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { useEffect } from 'react';
 
 import Hero from './components/Hero'
 import About from './components/About'
@@ -13,9 +14,21 @@ import Sidebar from './components/Sidebar';
 import Gallery from './components/Gallery';
 import Skills from './components/Skills'
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  // const [count, setCount] = useState(0)
+  
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true,
+    });
+  }, []);
 
   return (
     <>

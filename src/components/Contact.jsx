@@ -58,10 +58,10 @@ export default function Contact() {
           <a href="https://github.com/Omisha99" target="_blank" rel="noopener noreferrer" title="Github">
             <FaGithub />
           </a>
-          <a href="mailto:omisha.sapra@gmail.com" title="Email">
+          <a href="mailto:" title="Email">
             <FaEnvelope />
           </a>
-          <a href="https://drive.google.com/file/d/15rGRZXguqfL7ThCk8svr9aG1FODbqEAk/view?usp=sharing" target="_blank" rel="noopener noreferrer" title="View Resume">
+          <a href="https://drive.google.com/file/d/1KvstXP2beLIyj9ptbu7pVHbAdSxfWuVP/view?usp=sharing" target="_blank" rel="noopener noreferrer" title="View Resume">
             <FaFileDownload />
         </a>
 

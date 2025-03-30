@@ -54,6 +54,7 @@ import {
     ];
   
     return (
+        <div data-aos="fade-up" data-aos-delay="200">
       <section className="skills-section" id="skills">
         <h2 className="skills-heading">Skills</h2>
   
@@ -73,6 +74,7 @@ import {
           ))}
         </div>
       </section>
+        </div>
     );
   }
   

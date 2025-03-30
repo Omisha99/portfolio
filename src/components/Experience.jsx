@@ -51,6 +51,8 @@ export default function Experience() {
   ];
 
   return (
+    <div data-aos="fade-up" data-aos-delay="200">
+
     <section className="experience-section timeline-container">
       <div className="experience-content">
         <h2 className="experience-heading">Experience</h2>
@@ -72,5 +74,6 @@ export default function Experience() {
         </div>
       </div>
     </section>
+      </div>
   );
 }

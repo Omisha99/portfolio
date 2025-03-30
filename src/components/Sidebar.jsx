@@ -51,7 +51,7 @@ export default function Sidebar() {
           <a href="#contact" title="Contact"><FaEnvelope /></a>
         </li>
         <li>
-        <a href="https://drive.google.com/file/d/15rGRZXguqfL7ThCk8svr9aG1FODbqEAk/view?usp=sharing" title="Resume" target="_blank" rel="noopener noreferrer">
+        <a href="https://drive.google.com/file/d/1KvstXP2beLIyj9ptbu7pVHbAdSxfWuVP/view?usp=sharing" title="Resume" target="_blank" rel="noopener noreferrer">
             <FaFileDownload />
         </a>
         </li>
