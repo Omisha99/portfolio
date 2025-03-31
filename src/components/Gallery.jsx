@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import '../App.css';
-import Tilt from 'react-parallax-tilt';
 
 import art1 from '../assets/art/avatar.jpg';
 import art2 from '../assets/art/avatar.png';

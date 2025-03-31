@@ -2,12 +2,39 @@ import { FaLinkedin, FaGithub, FaEnvelope, FaFileDownload } from 'react-icons/fa
 import '../App.css';
 import Particles from 'react-tsparticles';
 import { loadLinksPreset } from 'tsparticles-preset-links';
-import { useCallback } from 'react';
+import { useCallback, useRef, useState } from 'react';
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
+  const form = useRef();
+  const [status, setStatus] = useState("");
     const particlesInit = useCallback(async engine => {
       await loadLinksPreset(engine);
     }, []);
+
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setStatus("Sending...");
+
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        form.current,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        () => {
+          setStatus("Message sent!");
+          form.current.reset();
+        },
+        (error) => {
+          console.error(error.text);
+          setStatus("Failed to send. Try again!");
+        }
+      );
+  };
   
     return (
       <section className="contact-section" id="contact">
@@ -58,15 +85,25 @@ export default function Contact() {
           <a href="https://github.com/Omisha99" target="_blank" rel="noopener noreferrer" title="Github">
             <FaGithub />
           </a>
-          <a href="mailto:" title="Email">
+          {/* <a href="mailto:" title="Email">
             <FaEnvelope />
-          </a>
+          </a> */}
           <a href="https://drive.google.com/file/d/1KvstXP2beLIyj9ptbu7pVHbAdSxfWuVP/view?usp=sharing" target="_blank" rel="noopener noreferrer" title="View Resume">
             <FaFileDownload />
         </a>
 
         </div>
+      <section className="contact-section-2" id="contact">
+      <form ref={form} onSubmit={sendEmail} className="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+        <p className="form-status">{status}</p>
+      </form>
+    </section>
       </div>
     </section>
+    
   );
 }

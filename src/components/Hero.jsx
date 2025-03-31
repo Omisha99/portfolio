@@ -1,10 +1,17 @@
 import '../App.css';
 import Particles from 'react-tsparticles';
 import { loadLinksPreset } from 'tsparticles-preset-links';
-import { useCallback } from 'react';
-import avatar from '../assets/avatar.png'; 
+import { useCallback, useState } from 'react';
+import avatarNormal from '../assets/avatar.png'; 
+import avatarGlitch from "../assets/glitchAvatar.png";
+import { useNavigate } from "react-router";
+
 
 export default function Hero() {
+    const [hovered, setHovered] = useState(false);
+    const navigate = useNavigate();
+
+    
   const particlesInit = useCallback(async (engine) => {
     await loadLinksPreset(engine);
   }, []);
@@ -53,7 +60,27 @@ export default function Hero() {
       
 
       <div className="hero-content">
-      <img src={avatar} alt="Avatar" className="hero-avatar" />
+      {/* <img src={avatar} alt="Avatar" className="hero-avatar" /> */}
+      <div className="hero-avatar-wrapper">
+
+        <div
+        className="avatar-fade-container"
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+        onClick={() => navigate("/playground")}
+        >
+        <img
+            src={avatarNormal}
+            alt="Normal Avatar"
+            className={`avatar-img fade-top ${hovered ? "fade-out" : ""}`}
+        />
+        <img
+            src={avatarGlitch}
+            alt="Glitch Avatar"
+            className={`avatar-img fade-bottom ${hovered ? "fade-in" : ""}`}
+        />
+        </div>
+    </div>
 
         <h1 className="hero-title">Hi, I’m [Your Name]</h1>
         <p className="hero-tags">

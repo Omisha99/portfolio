@@ -1,0 +1,176 @@
+.glitch-mode {
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #000000, #0a0a0a);
+    color: #fff;
+    padding: 4rem 2rem;
+    text-align: center;
+    font-family: 'Share Tech Mono', monospace;
+  }
+  
+  .glitch-heading {
+    font-size: 3rem;
+    color: #f0f;
+    animation: glitch 1s infinite;
+  }
+  
+  .glitch-sub {
+    font-size: 1.2rem;
+    color: #a78bfa;
+    margin-top: 1rem;
+  }
+  
+  .glitch-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+  }
+  
+  .glitch-card {
+    background: rgba(6, 11, 18, 0.324);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid #a78bfa44;
+    color: #0ff;
+    box-shadow: 0 0 20px #0ff3;
+    transition: all 0.3s ease;
+    animation: flicker 3s infinite alternate;
+  }
+  
+  .glitch-card:hover {
+    transform: scale(1.05) rotate(-1deg);
+    box-shadow: 0 0 30px #f0f;
+    color: #f0f;
+  }
+  
+  /* Glitch Animation */
+  @keyframes glitch {
+    0% { text-shadow: 2px 0 red, -2px 0 cyan; }
+    25% { text-shadow: -2px 0 lime, 2px 0 magenta; }
+    50% { text-shadow: 1px -1px blue, -1px 1px red; }
+    75% { text-shadow: -2px 1px cyan, 2px -1px lime; }
+    100% { text-shadow: 0 0 white; }
+  }
+  
+  @keyframes flicker {
+    0% { opacity: 0.9; }
+    10% { opacity: 1; }
+    20% { opacity: 0.85; }
+    30% { opacity: 1; }
+    100% { opacity: 0.95; }
+  }
+  
+  .glitch-exit {
+  margin-top: 3rem;
+  background: transparent;
+  border: 1px solid #f0f;
+  padding: 0.8rem 1.4rem;
+  color: #f0f;
+  font-family: inherit;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.glitch-exit:hover {
+  background: #f0f3;
+  color: rgb(255, 255, 255);
+}
+
+.glitch-strings {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+  }
+  
+  .glitch-string {
+    position: fixed;
+    top: -20%;
+    width: 2px;
+    height: 100vh;
+    background: linear-gradient(to bottom, transparent, rgba(255, 0, 255, 0.395), transparent);
+    animation: glitch-fall linear infinite;
+    opacity: 0.2;
+    border-radius: 1px;
+    filter: blur(1px);
+  }
+  
+  @keyframes glitch-fall {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    10% {
+      opacity: 0.3;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+  }
+  
+  .glitch-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.12;
+    mix-blend-mode: lighten;
+  }
+
+  /* .hero-avatar-wrapper-g {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+   */
+  .avatar-fade-container-g {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    margin: 2rem auto;
+    cursor: pointer;
+  }
+  
+  .avatar-img-g {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    box-shadow: 0 0 12px #72f3ff6e;
+    background: #82fffb25;
+  }
+  
+  /* Fade out normal avatar upwards */
+  .fade-top.fade-out {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  
+  /* Fade in glitch avatar from below */
+  .fade-bottom {
+    opacity: 0;
+    transform: translateY(20px);
+    z-index: 1;
+  }
+  
+  .fade-bottom.fade-in {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  
