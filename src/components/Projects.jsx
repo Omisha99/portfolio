@@ -45,8 +45,8 @@ export default function Projects() {
 
     <section className="projects-section" id="projects">
       <div className="projects-content">
-        <h2 className="projects-heading">Projects</h2>
-        <div className="project-grid">
+        <h2 className="projects-heading">Projects [Updating Soon...]</h2>
+        {/* <div className="project-grid">
           {projects.map((project, idx) => (
             <div key={idx} className="project-card">
               <h3>{project.title}</h3>
@@ -59,7 +59,7 @@ export default function Projects() {
               <a href={project.link} className="project-link">View Project</a>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
       </div>

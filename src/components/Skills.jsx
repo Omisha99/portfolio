@@ -56,9 +56,9 @@ import {
     return (
         <div data-aos="fade-up" data-aos-delay="200">
       <section className="skills-section" id="skills">
-        <h2 className="skills-heading">Skills</h2>
+        <h2 className="skills-heading">Skills [Updating Soon...]</h2>
   
-        <div className="skills-categories">
+        {/* <div className="skills-categories">
           {sections.map((section, i) => (
             <div className="skills-group" key={i}>
               <h3>{section.title}</h3>
@@ -72,7 +72,7 @@ import {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
       </section>
         </div>
     );

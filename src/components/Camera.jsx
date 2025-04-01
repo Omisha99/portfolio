@@ -1,14 +1,14 @@
 import GalleryGrid from "./GalleryGrid";
-import digitalArt from "../data/DigitalArt"; // assuming it's an array of images
+import digitalArt from "../data/cameraRoll";
 import { useNavigate } from "react-router";
 import './GlitchTheme.css';
 
-export default function DigitalGallery() {
+export default function Camera() {
   const navigate = useNavigate();
 
   return (
     <section className="glitch-gallery-page">
-      <GalleryGrid title="⧉ Digital Art" images={digitalArt} id="digital-art" />
+      <GalleryGrid title="⧉ Camera Roll" images={digitalArt} id="photography" />
     </section>
   );
 }

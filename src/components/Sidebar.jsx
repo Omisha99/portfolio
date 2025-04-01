@@ -63,9 +63,9 @@ export default function Sidebar() {
           <li className={activeId === "skills" ? "sidebar-active" : ""}>
             <a href="#skills" title="Skills"><FaCog /></a>
           </li>
-          <li className={activeId === "gallery" ? "sidebar-active" : ""}>
+          {/* <li className={activeId === "gallery" ? "sidebar-active" : ""}>
             <a href="#gallery" title="Gallery"><FaImages /></a>
-          </li>
+          </li> */}
           <li className={activeId === "contact" ? "sidebar-active" : ""}>
             <a href="#contact" title="Contact"><FaEnvelope /></a>
           </li>

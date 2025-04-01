@@ -5,6 +5,8 @@ import avatarNormal from "../assets/avatar.png";
 import { useNavigate } from "react-router";
 import { useState } from "react";
 import glitchZap from '../assets/zap.mp3'; 
+import GalleryGrid from "../components/GalleryGrid";
+import digitalArt from "../data/DigitalArt";
 
 export default function Playground() {
 
@@ -96,29 +98,39 @@ useEffect(() => {
 
       <h1 className="glitch-heading">⧉ Glitch Init</h1>
       <p className="glitch-sub">
-        Welcome to the corrupted timeline. This is where my experiments, generative art,
-        and prompt engineering skills live.
+      <h2 className="glitch-sub-heading">Welcome to the corrupted timeline.</h2>
+        Home to generative art, shader hacks, and captured light - reality may not render correctly.
+        {/* This is where my experiments, generative art,
+        and prompt engineering skills live. */}
       </p>
 
       <div className="glitch-grid">
         <div className="glitch-card">
           <h3>🎨 Generative Art</h3>
           <p>Gallery of AI art, live sketches & procedural visuals</p>
-          <button className="glitch-mini">View Gallery</button>
+          <button onClick={() => navigate("/playground/gai_art")} className="glitch-mini-but">View Gallery</button>
         </div>
 
         <div className="glitch-card">
-          <h3>🧠 Prompt Arsenal</h3>
-          <p>My personal prompt library, techniques, and real-world use cases.</p>
-          <button className="glitch-mini">Enter Terminal</button>
-        </div>
-
-        <div className="glitch-card">
-          <h3>👁️ Vision Model Demos</h3>
+          <h3>👁️ Interactive Computer Graphics</h3>
           <p>OpenGL/WebGL experiments, shaders, and visual tweaks</p>
-          <button className="glitch-mini">Load Visuals</button>
+          <button onClick={() => navigate("/playground/opengl")} className="glitch-mini-but">Boot Graphics</button>
+        </div>
+
+        <div className="glitch-card">
+          <h3>📸 Photography</h3>
+          <p>Nature, architecture, and travel moments frozen in time</p>
+          <button onClick={() => navigate("/playground/photography")} className="glitch-mini-but">Enter Memory</button>
+        </div>
+        
+        <div className="glitch-card">
+          <h3>🖼️ Digital Art</h3>
+          <p>Hand-drawn sketches, stylized pieces</p>
+          <button onClick={() => navigate("/playground/digital_art")} className="glitch-mini-but">Render Artbook</button>
         </div>
       </div>
+
+
 
       <button onClick={() => window.location.href = "/"} className="glitch-exit">
         🚪 Escape Back To Reality

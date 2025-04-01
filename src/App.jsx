@@ -14,8 +14,11 @@ import Contact from './components/Contact';
 import Sidebar from './components/Sidebar';
 import Gallery from './components/Gallery';
 import Skills from './components/Skills';
+import Camera from './components/Camera';
 
+import ComingSoon from './components/ComingSoon';
 import Playground from './components/Playground'; 
+
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -29,7 +32,7 @@ function HomeLayout() {
       <section id="experience"><Experience /></section>
       <section id="projects"><Projects /></section>
       <section id="skills"><Skills /></section>
-      <section id="gallery"><Gallery /></section>
+      {/* <section id="gallery"><Gallery /></section> */}
       <section id="contact"><Contact /></section>
     </>
   );
@@ -51,6 +54,12 @@ function App() {
     <Routes>
       <Route path="/" element={<HomeLayout />} />
       <Route path="/playground" element={<Playground />} />
+      <Route path="/playground/digital_art" element={<Gallery />} />
+      <Route path="/playground/gai_art" element={<ComingSoon />} />
+      <Route path="/playground/photography" element={<Camera />} />
+      <Route path="/playground/opengl" element={<ComingSoon />} />
+      {/* <Route path="/playground/ai" element={<AiGallery />} />
+      <Route path="/playground/photos" element={<PhotographyGallery />} /> */}
     </Routes>
 
     </>

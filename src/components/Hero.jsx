@@ -82,7 +82,7 @@ export default function Hero() {
         </div>
     </div>
 
-        <h1 className="hero-title">Hi, I’m [Your Name]</h1>
+        <h1 className="hero-title">Hi, I’m Omisha Sapra</h1>
         <p className="hero-tags">
           Machine Learning Engineer • Creative Technologist • Digital Artist • 3D Enthusiast
         </p>
