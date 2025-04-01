@@ -67,7 +67,7 @@ export default function Hero() {
         className="avatar-fade-container"
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        onClick={() => navigate("/playground")}
+        onClick={() => navigate("/glitch")}
         >
         <img
             src={avatarNormal}

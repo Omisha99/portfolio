@@ -108,25 +108,25 @@ useEffect(() => {
         <div className="glitch-card">
           <h3>🎨 Generative Art</h3>
           <p>Gallery of AI art, live sketches & procedural visuals</p>
-          <button onClick={() => navigate("/playground/gai_art")} className="glitch-mini-but">View Gallery</button>
+          <button onClick={() => navigate("/glitch/gai_art")} className="glitch-mini-but">View Gallery</button>
         </div>
 
         <div className="glitch-card">
           <h3>👁️ Interactive Computer Graphics</h3>
           <p>OpenGL/WebGL experiments, shaders, and visual tweaks</p>
-          <button onClick={() => navigate("/playground/opengl")} className="glitch-mini-but">Boot Graphics</button>
+          <button onClick={() => navigate("/glitch/opengl")} className="glitch-mini-but">Boot Graphics</button>
         </div>
 
         <div className="glitch-card">
           <h3>📸 Photography</h3>
           <p>Nature, architecture, and travel moments frozen in time</p>
-          <button onClick={() => navigate("/playground/photography")} className="glitch-mini-but">Enter Memory</button>
+          <button onClick={() => navigate("/glitch/photography")} className="glitch-mini-but">Enter Memory</button>
         </div>
         
         <div className="glitch-card">
           <h3>🖼️ Digital Art</h3>
           <p>Hand-drawn sketches, stylized pieces</p>
-          <button onClick={() => navigate("/playground/digital_art")} className="glitch-mini-but">Render Artbook</button>
+          <button onClick={() => navigate("/glitch/digital_art")} className="glitch-mini-but">Render Artbook</button>
         </div>
       </div>
 

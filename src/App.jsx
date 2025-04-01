@@ -53,11 +53,11 @@ function App() {
     <>
     <Routes>
       <Route path="/" element={<HomeLayout />} />
-      <Route path="/playground" element={<Playground />} />
-      <Route path="/playground/digital_art" element={<Gallery />} />
-      <Route path="/playground/gai_art" element={<ComingSoon />} />
-      <Route path="/playground/photography" element={<Camera />} />
-      <Route path="/playground/opengl" element={<ComingSoon />} />
+      <Route path="/glitch" element={<Playground />} />
+      <Route path="/glitch/digital_art" element={<Gallery />} />
+      <Route path="/glitch/gai_art" element={<ComingSoon />} />
+      <Route path="/glitch/photography" element={<Camera />} />
+      <Route path="/glitch/opengl" element={<ComingSoon />} />
       {/* <Route path="/playground/ai" element={<AiGallery />} />
       <Route path="/playground/photos" element={<PhotographyGallery />} /> */}
     </Routes>

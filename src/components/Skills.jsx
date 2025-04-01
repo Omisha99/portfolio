@@ -1,5 +1,5 @@
 import {
-    FaPython, FaJsSquare, FaGitAlt, FaGithub, FaUnity, FaReact,
+    FaPython, FaJsSquare, FaGitAlt, FaMobileAlt, FaGithub, FaUnity, FaReact,
     FaHtml5, FaCss3Alt
   } from 'react-icons/fa';
   import {
@@ -12,18 +12,23 @@ import {
   export default function Skills() {
     const sections = [
       {
-        title: "Languages & Libraries",
+        title: "Programming Languages",
         skills: [
           { name: "Python", icon: <FaPython /> },
           { name: "C++", icon: <SiCplusplus /> },
           { name: "C#", icon: <FaUnity /> },
-          { name: "JavaScript", icon: <FaJsSquare /> },
           { name: "HTML", icon: <FaHtml5 /> },
           { name: "CSS", icon: <FaCss3Alt /> },
-          { name: "OpenGL", icon: <SiOpengl /> },
-          { name: "React", icon: <FaReact /> },
+          { name: "JavaScript", icon: <FaJsSquare /> },
+        ]
+      },
+      {
+        title: "Libraries & Frameworks",
+        skills: [
           { name: "FastAPI", icon: <SiFastapi /> },
           { name: "Flask", icon: <SiFlask /> },
+          { name: "React", icon: <FaReact /> },
+          { name: "OpenGL", icon: <SiOpengl /> },
           { name: "TensorFlow", icon: <SiTensorflow /> },
           { name: "PyTorch", icon: <SiPytorch /> }
         ]
@@ -48,7 +53,8 @@ import {
           { name: "3D Pipelines", icon: <FaUnity /> },
           { name: "Game Dev", icon: <FaUnity /> },
           { name: "Conversational Bots", icon: <FaReact /> },
-          { name: "Avatar Systems", icon: <SiOpengl /> }
+          { name: "Avatar Systems", icon: <SiOpengl /> },
+          { name: "UI/UX Design", icon: <FaMobileAlt /> }
         ]
       }
     ];
@@ -58,7 +64,7 @@ import {
       <section className="skills-section" id="skills">
         <h2 className="skills-heading">Skills [Updating Soon...]</h2>
   
-        {/* <div className="skills-categories">
+       <div className="skills-categories">
           {sections.map((section, i) => (
             <div className="skills-group" key={i}>
               <h3>{section.title}</h3>
@@ -72,7 +78,7 @@ import {
               </div>
             </div>
           ))}
-        </div> */}
+        </div> 
       </section>
         </div>
     );

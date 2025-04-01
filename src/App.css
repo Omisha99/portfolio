@@ -7,7 +7,7 @@ body {
   padding: 0;
   font-family: 'Inter', sans-serif;
   color: #f1f5f9;
-  background: linear-gradient(135deg, #0f172a, #0b1120, #000000);
+  background: linear-gradient(135deg, #06000c, #070014, #001015);
   background-attachment: fixed;
   background-size: cover;
   scroll-behavior: smooth;
@@ -45,20 +45,20 @@ a:hover {
 .hero-title {
   font-size: 2.8rem;
   font-weight: 700;
-  color: #a78bfa;
+  color: #968bfa;
   margin-bottom: 1rem;
   letter-spacing: -0.5px;
 }
 
 .hero-tags {
   font-size: 1.25rem;
-  color: #94a3b8;
+  color: #a794b8;
   margin-bottom: 1.25rem;
 }
 
 .hero-description {
   font-size: 1.1rem;
-  color: #cbd5e1;
+  color: #d7cbe1;
   margin-bottom: 2rem;
 }
 
