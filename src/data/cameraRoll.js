@@ -19,7 +19,7 @@ import img18 from '../assets/pics/18.jpg';
 import img19 from '../assets/pics/19.jpg';
 import img20 from '../assets/pics/20.jpg';
 import img21 from '../assets/pics/21.jpg';
-import img22 from '../assets/pics/22.jpg';
+// import img22 from '../assets/pics/22.jpg';
 import img23 from '../assets/pics/23.jpg';
 import img24 from '../assets/pics/24.jpg';
 import img25 from '../assets/pics/25.jpg';
@@ -36,7 +36,7 @@ const cameraRoll = [
   { src: img8, title: 'Artwork 8' },
   { src: img9, title: 'Artwork 9' },
   { src: img10, title: 'Artwork 10' },
-//   { src: img11, title: 'Artwork 11' },
+  { src: img11, title: 'Artwork 11' },
   { src: img12, title: 'Artwork 12' },
   { src: img13, title: 'Artwork 13' },
   { src: img14, title: 'Artwork 14' },
@@ -47,7 +47,7 @@ const cameraRoll = [
   { src: img19, title: 'Artwork 19' },
   { src: img20, title: 'Artwork 20' },
   { src: img21, title: 'Artwork 21' },
-  { src: img22, title: 'Artwork 22' },
+//   { src: img22, title: 'Artwork 22' },
   { src: img23, title: 'Artwork 23' },
   { src: img24, title: 'Artwork 24' },
   { src: img25, title: 'Artwork 25' },
