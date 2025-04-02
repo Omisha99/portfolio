@@ -5,7 +5,7 @@ import {
   import {
     SiCplusplus, SiOpengl, SiOpenai, SiTensorflow,
     SiPytorch, SiFastapi, SiBlender, SiMongodb, SiAutodesk,
-    SiFlask, SiKrita
+    SiFlask, SiKrita, SiLangchain, SiStreamlit, SiHuggingface
   } from 'react-icons/si';
   import '../App.css';
   
@@ -30,7 +30,11 @@ import {
           { name: "React", icon: <FaReact /> },
           { name: "OpenGL", icon: <SiOpengl /> },
           { name: "TensorFlow", icon: <SiTensorflow /> },
-          { name: "PyTorch", icon: <SiPytorch /> }
+          { name: "PyTorch", icon: <SiPytorch /> },
+          { name: "LangChain", icon: <SiLangchain /> },
+          { name: "Streamlit", icon: <SiStreamlit  /> },
+          { name: "Gradio", icon: <SiHuggingface /> },
+          { name: "D3.js", icon: <FaJsSquare /> },
         ]
       },
       {
@@ -50,6 +54,7 @@ import {
         skills: [
           { name: "Machine Learning", icon: <SiOpenai /> },
           { name: "Generative AI", icon: <SiOpenai /> },
+          { name: "Stable Diffusion", icon: <SiOpenai /> },
           { name: "3D Pipelines", icon: <FaUnity /> },
           { name: "Game Dev", icon: <FaUnity /> },
           { name: "Conversational Bots", icon: <FaReact /> },
@@ -62,7 +67,7 @@ import {
     return (
         <div data-aos="fade-up" data-aos-delay="200">
       <section className="skills-section" id="skills">
-        <h2 className="skills-heading">Skills [Updating Soon...]</h2>
+        <h2 className="skills-heading">Skills</h2>
   
        <div className="skills-categories">
           {sections.map((section, i) => (
