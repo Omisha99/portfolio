@@ -2,7 +2,7 @@ import GalleryGrid from "./GalleryGrid";
 import comingSoon from "../data/ComingSoon"; 
 import { useNavigate } from "react-router";
 import './GlitchTheme.css';
-import avatarGlitch from "../assets/glitchAvatar.png";
+import avatarGlitch from "../assets/glitchAvatar.png"; 
 
 
 export default function ComingSoon() {

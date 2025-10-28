@@ -106,13 +106,13 @@ useEffect(() => {
 
       <div className="glitch-grid">
         <div className="glitch-card">
-          <h3>🎨 Generative Art</h3>
+          <h3>🎨 Generative Art [Coming Soon...]</h3>
           <p>Gallery of AI art, live sketches & procedural visuals</p>
           <button onClick={() => navigate("/glitch/gai_art")} className="glitch-mini-but">View Gallery</button>
         </div>
 
         <div className="glitch-card">
-          <h3>👁️ Interactive Computer Graphics</h3>
+          <h3>👁️ Interactive Computer Graphics [Coming Soon...]</h3>
           <p>OpenGL/WebGL experiments, shaders, and visual tweaks</p>
           <button onClick={() => navigate("/glitch/opengl")} className="glitch-mini-but">Boot Graphics</button>
         </div>

@@ -24,19 +24,19 @@ export default function Projects() {
         title: "TTS Customer Support Bot @Hike Pvt. Ltd.",
         description: "A full-stack voice-enabled chatbot with STT + TTS using FastAPI and React.",
         tech: ["FastAPI", "React", "LLM API"],
-        link: "https://rush.network/"
+        // link: "https://rush.network/"
       },
       {
         title: "AAA Game Content Automation @Hike Pvt. Ltd.",
         description: "Full-stack website and API for CricketPulse, a AAA game in the Rush app, enabling real-time, dynamic content generation and automated question selection improving content generation efficiency by 60% and accelerating time-to-market.",
         tech: ["Python", "FastAPI", "React"],
-        link: "https://rush.network/"
+        // link: "https://rush.network/"
       },
       {
         title: "Smart Suggestion Plugin for Google Docs @Hike Pvt. Ltd.",
         description: "Developed a Google Docs plugin to improve weekly team update documents by providing AI-driven suggestions based on defined guidelines.",
         tech: ["Google Apps Script", "LLM API", "JavaScript"],
-        link: "https://rush.network/", 
+        // link: "https://rush.network/", 
       }
       
   ];
@@ -57,7 +57,11 @@ export default function Projects() {
                   <span key={i}>{tech}</span>
                 ))}
               </div>
-              <a href={project.link} className="project-link">View Project</a>
+              {project.link && (
+                <a href={project.link} className="project-link" target="_blank" rel="noopener noreferrer">
+                  View Project
+                </a>
+              )}
             </div>
           ))}
         </div> 

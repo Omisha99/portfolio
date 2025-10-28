@@ -1,11 +1,11 @@
 import {
     FaPython, FaJsSquare, FaGitAlt, FaMobileAlt, FaGithub, FaUnity, FaReact,
-    FaHtml5, FaCss3Alt
+    FaHtml5, FaCss3Alt, FaMicrophone, FaVolumeUp
   } from 'react-icons/fa';
   import {
-    SiCplusplus, SiOpengl, SiOpenai, SiTensorflow,
-    SiPytorch, SiFastapi, SiBlender, SiMongodb, SiAutodesk,
-    SiFlask, SiKrita, SiLangchain, SiStreamlit, SiHuggingface
+    SiCplusplus, SiOpengl, SiOpenai, SiTensorflow, 
+    SiPytorch, SiFastapi, SiBlender, SiMongodb, SiAutodesk, SiDatabricks,
+    SiFlask, SiKrita, SiLangchain, SiStreamlit, SiHuggingface,SiApachespark
   } from 'react-icons/si';
   import '../App.css';
   
@@ -25,21 +25,24 @@ import {
       {
         title: "Libraries & Frameworks",
         skills: [
-          { name: "FastAPI", icon: <SiFastapi /> },
-          { name: "Flask", icon: <SiFlask /> },
-          { name: "React", icon: <FaReact /> },
-          { name: "OpenGL", icon: <SiOpengl /> },
           { name: "TensorFlow", icon: <SiTensorflow /> },
           { name: "PyTorch", icon: <SiPytorch /> },
+          { name: "PySpark", icon: <SiApachespark /> },
+          { name: "OpenAI API", icon: <SiOpenai /> },
           { name: "LangChain", icon: <SiLangchain /> },
+          { name: "Flask", icon: <SiFlask /> },
+          { name: "React", icon: <FaReact /> },
+          { name: "FastAPI", icon: <SiFastapi /> },
           { name: "Streamlit", icon: <SiStreamlit  /> },
           { name: "Gradio", icon: <SiHuggingface /> },
           { name: "D3.js", icon: <FaJsSquare /> },
+          { name: "OpenGL", icon: <SiOpengl /> },
         ]
       },
       {
         title: "Tools & Software",
         skills: [
+          { name: "Databricks", icon: <SiDatabricks /> },
           { name: "Unity3D", icon: <FaUnity /> },
           { name: "Autodesk Maya", icon: <SiAutodesk /> },
           { name: "Blender", icon: <SiBlender /> },
@@ -53,8 +56,13 @@ import {
         title: "Concepts & Experience",
         skills: [
           { name: "Machine Learning", icon: <SiOpenai /> },
+          { name: "Deep Learning", icon: <SiOpenai /> },
+          { name: "NLP", icon: <SiOpenai /> },
           { name: "Generative AI", icon: <SiOpenai /> },
           { name: "Stable Diffusion", icon: <SiOpenai /> },
+          // { name: "Speech-to-Text", icon: <FaMicrophone /> },
+          // { name: "Text-to-Speech", icon: <FaVolumeUp /> },
+          { name: "RAG", icon: <SiOpenai /> },
           { name: "3D Pipelines", icon: <FaUnity /> },
           { name: "Game Dev", icon: <FaUnity /> },
           { name: "Conversational Bots", icon: <FaReact /> },
