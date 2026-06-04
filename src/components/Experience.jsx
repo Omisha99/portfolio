@@ -79,14 +79,14 @@ const experienceTabs = [
       },
       {
         label: 'Voice AI Chatbot',
-        slug: 'voice-ai-support-chatbot',
+        slug: 'voice-ai-customer-support-bot',
       },
       {
-        label: 'AAA Cricket AI Platform',
-        slug: 'aaa-cricket-ai-platform',
+        label: 'AAA Cricket Content Automation Platform',
+        slug: 'cricket-content-automation',
       },
       {
-        label: 'Creative ML-Art Tooling',
+        label: 'Generative AI/ML-Art Pipeline',
         slug: 'creative-ml-art-pipeline',
       },
       {

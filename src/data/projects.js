@@ -1,3 +1,6 @@
+import sponzaMain from "../assets/projects/opengl_forward.png";
+import sponzaPbr from "../assets/projects/opengl_clustered.png";
+
 export const projectFilters = [
   { id: 'all', label: 'All Projects' },
   { id: 'university', label: 'University of Utah' },
@@ -52,7 +55,7 @@ export const projects = [
   },
   {
     slug: 'plant-viability-cv-system',
-    title: 'Computer Vision Plant Viability',
+    title: 'Computer Vision Plant Health & Inventory Tracking',
     thumbnail: { variant: 'vision', label: 'Tray vision', tone: 'university' },
     eyebrow: 'Computer Vision + Full-Stack ML',
     source: 'university',
@@ -126,7 +129,7 @@ export const projects = [
         'Published the final project as a GitHub Pages demo with an embedded screencast.'
       ],
       outcome:
-        'The project became a polished interactive visualization and was featured in the course hall of fame, reflecting its strength as a data storytelling and front-end engineering project.',
+        'The project is a polished interactive visualization tool and is featured in the course hall of fame.',
       learnings: [
         'Good visualization is about reducing cognitive load, not adding more charts.',
         'Interactive maps are strongest when paired with focused detail views and trend charts.',
@@ -135,117 +138,218 @@ export const projects = [
     }
   },
   {
+    slug: 'forward-plus-clustered-deferred-renderer',
+    title: 'Forward+ and Clustered Deferred Renderer',
+    thumbnail: { variant: 'rendering', label: 'Real-time renderer', tone: 'university' },
+    eyebrow: 'Computer Graphics + Real-Time Rendering',
+    source: 'university',
+    category: 'Final Project',
+
+    summary:
+      'A real-time OpenGL renderer comparing Forward+ rendering and clustered deferred rendering for efficient lighting in complex 3D scenes.',
+
+    tech: ['C++', 'OpenGL', 'GLSL', 'GLFW', 'GLEW', 'GLM', 'cyCodeBase', 'stb_image'],
+
+    metrics: [
+      'Forward+ rendering pipeline',
+      'Clustered deferred rendering pipeline',
+      'Interactive camera and lighting controls'
+    ],
+
+    links: [],
+    gallery: [
+        {
+          src: sponzaMain,
+          alt: 'Sponza scene Forward + render',
+          caption: 'Forward+ Render'
+        },
+        {
+          src: sponzaPbr,
+          alt: 'Sponza scene Clustered Deferred render',
+          caption: 'Clustered Deferred Render'
+        }
+      ],
+    readme: {
+      overview:
+        'This project was developed as an interactive computer graphics final project focused on real-time rendering techniques. The system implements a Forward+ renderer and a clustered deferred renderer for displaying textured 3D scenes with interactive camera and lighting controls. The renderer loads OBJ models, prepares GPU buffers for geometry attributes, applies GLSL shader programs and supports material-based rendering for complex scenes such as Sponza.',
+
+      problem:
+        'Traditional forward rendering can become expensive when many lights affect a scene because each object or fragment may need to evaluate many light contributions. The goal was to explore more scalable real-time lighting techniques by implementing Forward+ and clustered deferred rendering pipelines.',
+
+      approach: [
+        'Built a C++ OpenGL application using GLFW for window/input management and GLEW for OpenGL extension loading.',
+        'Loaded OBJ geometry and material data, then converted mesh positions, normals and UVs into GPU vertex buffers.',
+        'Implemented a Forward+ rendering path to improve light evaluation by organizing lighting work more efficiently than basic forward rendering.',
+        'Implemented a clustered deferred rendering path to separate geometry processing from lighting and support more scalable scene illumination.',
+        'Used GLSL shaders for lighting, material evaluation and scene rendering.',
+        'Added interactive camera controls, zoom/reset behavior and light manipulation for inspecting scenes from different viewpoints.'
+      ],
+
+      outcome:
+        'The final renderer demonstrates two modern real-time lighting approaches and provides an interactive scene viewer for comparing Forward+ and clustered deferred rendering behavior in a complex 3D environment.',
+
+      learnings: [
+        'Forward+ rendering improves on basic forward rendering by reducing unnecessary per-fragment light calculations.',
+        'Clustered deferred rendering is useful for organizing lighting in screen/view-space regions and handling complex lighting more efficiently.',
+        'Large scenes require careful handling of mesh data, material ranges, shader state and GPU resource binding.',
+        'Interactive camera and lighting controls make renderer behavior much easier to debug and evaluate visually.'
+      ]
+    }
+  },
+  {
+   slug: 'voice-ai-customer-support-bot',
+   title: 'Voice AI Customer Support Chatbot',
+   thumbnail: { variant: 'chat', label: 'AI support', tone: 'product' },
+   eyebrow: 'LLM Agents + Voice AI + Full-Stack App',
+   source: 'hike',
+   category: 'Hike / Production AI Tooling',
+ 
+   summary:
+     'A full-stack AI customer support system that uses LLM-based conversation flows, function calling, transaction-aware resolution logic, multilingual speech transcription and voice synthesis to automate user support across chat and voice interfaces.',
+ 
+   tech: [
+     'Python', 'FastAPI', 'React', 'OpenAI API', 'MongoDB', 'Speech-to-Text',
+     'Text-to-Speech', 'Telegram Bot API', 'Docker' ],
+   metrics: [
+     'Supports chat, voice-only and voice-assisted support modes',
+     'Maintains session context using MongoDB',
+     'Integrates transaction lookup, refund handling and feedback collection'
+   ],
+ 
+   // links: [],
+ 
+   readme: {
+     overview:
+       'This project is an AI customer support assistant built for Rush Gaming users. The system combines a React-based chat and voice interface with a Python backend powered by OpenAI function calling, structured conversation flows and support automation tools. Users can authenticate with their phone number, describe their issue in Hinglish or voice input, receive guided support responses and interact with options generated by the assistant.',
+ 
+     problem:
+       'Customer support teams for real-money gaming platforms handle repetitive user issues such as gameplay problems, deposits, withdrawals, refunds and account-related questions. Manual support is slow to scale, and users often need fast, conversational help in casual Hinglish across text and voice channels.',
+ 
+     approach: [
+       'Built a React frontend for the bot with chat mode, voice-only mode and voice-plus-chat mode, including bot avatars, voice selection, microphone recording and response feedback.',
+       'Developed a FastAPI backend exposing chat, transcription, text-to-speech, graph management, phone verification, feedback and health-check endpoints.',
+       'Implemented an LLM assistant engine using OpenAI chat completions, structured conversation-flow JSON and function calling for support tasks.',
+       'Added support tools for category and sub-category detection, relevance scoring, recent transaction retrieval and refund-flow handling.',
+       'Integrated Speech-to-Text for multilingual voice transcription across English, Hindi and regional language inputs.',
+       'Integrated TTS, Listnr, ElevenLabs and internal voice-conversion endpoints to generate spoken assistant responses.',
+       'Added Telegram bot support for phone-number collection and routing user messages into the customer support bot service.'
+     ],
+ 
+     outcome:
+       'The project delivered a working multimodal customer support assistant that can guide users through issue classification, transaction selection and resolution flows while preserving conversation context and collecting feedback for support-quality review.',
+ 
+     learnings: [
+       'Structured conversation graphs help keep LLM-driven support workflows predictable while still allowing natural user interaction.',
+       'Function calling is useful for connecting an assistant to operational tools such as transaction lookup, refund flows and category scoring.',
+       'Voice support requires careful preprocessing, including transcription cleanup, transliteration and filtering of IDs before text-to-speech playback.',
+       'A feedback loop inside the UI helps evaluate assistant responses and identify weak points in issue detection or resolution quality.'
+     ]
+   }
+ },
+ 
+  {
     slug: 'google-docs-assistant',
-    title: 'Google Docs Assistant',
-    thumbnail: { variant: 'document-ai', label: 'Docs AI', tone: 'hike' },
-    eyebrow: 'LLM Workflow + Writing Standards',
+    title: 'Google Docs Writing Assistant',
+    thumbnail: { variant: 'docs', label: 'Docs assistant', tone: 'productivity' },
+    eyebrow: 'Google Apps Script + LLM Workflow Automation',
     source: 'hike',
-    category: 'Hike / Production AI Tooling',
+    category: 'Hike / Production AI Tool',
+
     summary:
-      'An AI-powered Google Docs assistant that analyzed business documents and enforced company-specific writing standards through structured suggestions.',
-    tech: ['LLM API', 'Google Apps Script', 'JavaScript', 'Workflow Automation'],
-    metrics: ['~20% fewer revision cycles', 'Structured output constraints', 'Document workflow integration'],
+      'A Google Docs sidebar add-on that extracts draft content from structured documents, filters out template text and generates AI-powered writing suggestions that users can review and apply directly inside the document.',
+    tech: ['Google Apps Script', 'Google Docs API', 'JavaScript', 'OpenAI API', 'HTML', 'CSS'],
+    metrics: ['~20% fewer revision cycles', 'Template-aware content filtering', 'One-click suggestion acceptance workflow'],
+    links: [],
     readme: {
-      overview:
-        'This assistant helped teams improve internal business documents by reviewing content against company-specific writing guidelines. The focus was not just generation, but controlled, structured feedback that fit inside an existing writing workflow.',
-      problem:
-        'Business documents often go through repeated revision cycles because feedback is subjective, scattered, or applied too late. The goal was to make writing standards more accessible inside the document itself.',
-      approach: [
-        'Built a Google Docs assistant that analyzed document content in context.',
-        'Encoded company writing standards into structured LLM prompts and output constraints.',
-        'Designed suggestions to be actionable rather than generic.',
-        'Integrated the assistant into the existing document workflow so users did not need a separate tool.'
-      ],
-      outcome:
-        'The assistant reduced revision cycles by roughly 20% and showed how LLMs can improve quality when they are constrained by specific workflow rules.',
-      learnings: [
-        'LLM tools are more useful when embedded where work already happens.',
-        'Structured outputs reduce ambiguity and improve review quality.',
-        'Good AI UX often means narrowing the model’s job, not expanding it.'
-      ]
-    }
-  },
+        overview:
+          'This assistant helped teams improve internal business documents by reviewing draft content against company-specific writing guidelines. Built as a Google Docs sidebar add-on, it extracted editable content from the active document, ignored boilerplate from a reference template and generated concise rewrite suggestions that users could accept or reject in context.',
+        problem:
+          'Business documents often go through repeated revision cycles because feedback is subjective, scattered, or applied too late. The goal was to make writing standards accessible inside Google Docs so teams could improve clarity, concision and decision-readiness before formal review.',
+        approach: [
+          'Built a Google Docs add-on with a custom menu and sidebar using Google Apps Script.',
+          'Parsed paragraphs, list items and table content from the active document.',
+          'Filtered out template text so only user-written draft content was reviewed.',
+          'Encoded company writing standards into structured LLM prompts with clear output constraints.',
+          'Displayed original content and AI-generated suggestions side by side in the sidebar.',
+          'Added accept and reject actions so approved suggestions could replace the original document text directly.'
+        ],
+        outcome:
+          'The assistant reduced revision cycles by roughly 20% by embedding structured writing feedback directly into the document workflow and making company standards easier to apply consistently.',
+        learnings: [
+          'LLM tools are more useful when embedded where work already happens.',
+          'Template-aware extraction improves relevance by preventing boilerplate from being reviewed unnecessarily.',
+        ]
+      }
+    },
   {
-    slug: 'voice-ai-support-chatbot',
-    title: 'Voice AI Customer Support Chatbot',
-    thumbnail: { variant: 'voice-wave', label: 'Voice AI', tone: 'hike' },
-    eyebrow: 'Speech Interface + Full-Stack AI',
-    source: 'hike',
-    category: 'Hike / Production AI Tooling',
-    summary:
-      'A full-stack AI customer support chatbot with speech-to-text and text-to-speech for real-time interaction and testing.',
-    tech: ['FastAPI', 'React', 'Speech-to-Text', 'Text-to-Speech', 'LLM API'],
-    metrics: ['Real-time voice interaction', 'Custom voice persona', 'End-to-end AI product surface'],
-    readme: {
-      overview:
-        'This project explored what customer support feels like when the interface is conversational and voice-enabled. I built the full-stack prototype and helped design a custom voice persona aligned with the company mascot.',
-      problem:
-        'Text-only chatbots can feel impersonal and limited for support scenarios. Voice interaction introduces new UX and engineering challenges: latency, persona, input handling, and response playback all need to work together.',
-      approach: [
-        'Built a FastAPI backend to coordinate LLM responses, speech input, and speech output.',
-        'Created a React frontend for real-time interaction and testing.',
-        'Integrated speech-to-text and text-to-speech components into the chatbot loop.',
-        'Designed and tested a custom voice persona to improve engagement and brand alignment.'
-      ],
-      outcome:
-        'The prototype demonstrated a complete voice-enabled support loop and helped evaluate how speech interfaces could make AI support more engaging and brand-aware.',
-      learnings: [
-        'Voice AI is as much a product design problem as an ML problem.',
-        'Latency and response structure strongly affect perceived intelligence.',
-        'Personality needs to be designed intentionally, especially in customer-facing AI.'
-      ]
-    }
-  },
-  {
-    slug: 'aaa-cricket-ai-platform',
-    title: 'AAA Cricket AI Platform',
-    thumbnail: { variant: 'score-engine', label: 'Game content', tone: 'hike' },
-    eyebrow: 'Game AI + Dynamic Content Generation',
-    source: 'hike',
-    category: 'Hike / Production AI Tooling',
-    summary:
-      'A 0→1 AI platform and REST API for a AAA cricket game, enabling dynamic content generation and automated question selection.',
-    tech: ['Python', 'FastAPI', 'React', 'REST APIs', 'LLM Workflows'],
-    metrics: ['60% content generation efficiency gain', '0→1 platform build', 'Real-time dynamic content'],
-    readme: {
-      overview:
-        'This platform supported dynamic content generation for a AAA cricket game. It combined backend APIs, internal tooling, and AI-assisted workflows to speed up content creation and automate question selection.',
-      problem:
-        'Game content pipelines often need speed, variety, and consistency at the same time. Manual content generation can create bottlenecks, especially when content needs to stay fresh and game-ready.',
-      approach: [
-        'Designed and built the initial AI platform architecture from scratch.',
-        'Developed REST APIs to serve dynamic content generation workflows.',
-        'Built internal product surfaces to support content review and operational use.',
-        'Automated question selection to reduce manual effort and improve throughput.'
-      ],
-      outcome:
-        'The platform improved content generation efficiency by 60% and helped move AI-assisted content workflows closer to production usage inside a game environment.',
-      learnings: [
-        'Production AI systems need tooling for humans in the loop.',
-        'Automation is most valuable when it fits the existing content pipeline.',
-        'Game AI workflows require both creative flexibility and operational discipline.'
-      ]
-    }
-  },
+  slug: 'cricket-content-automation',
+  title: 'AAA Cricket Content Automation Platform',
+  thumbnail: { variant: 'dashboard', label: 'LiveOps console', tone: 'sports-tech' },
+  eyebrow: 'Full-Stack Automation + Dynamic Content Generation',
+  source: 'hike',
+  category: 'Hike / Production AI Tooling',
+
+  summary:
+    'A full-stack LiveOps system for generating, reviewing, editing and publishing cricket fantasy questions using live match data, tournament schedules, template-driven question generation and an operator approval workflow.',
+
+  tech: ['React', 'FastAPI', 'MongoDB', 'Python', 'Pandas', 'XGBoost', 'Roanuz API', 'Google OAuth'],
+
+  metrics: [
+    'Supports English and Hindi question generation',
+    'Generates slider, multi-select, multi-binary and player-select question formats',
+    'Handles pre-match, in-over, first/last-over, full-innings, short-contest and player-specific tournament flows'
+  ],
+
+  links: [],
+
+  readme: {
+    overview:
+      'This project is a CricketPulse LiveOps platform for automating cricket fantasy content. The backend fetches live match feeds, over-by-over data and tournament schedules, generates structured cricket questions from reusable templates, stores generated drafts in MongoDB and publishes approved payloads to an ingestion service. The React frontend gives operators a console to select matches and tournaments, generate questions, review generated states, edit options, approve or reject questions and inspect published content.',
+
+    problem:
+      'Live cricket fantasy operations require timely question creation across many matches, innings states and tournament formats. Manually writing and formatting questions is slow, inconsistent and difficult to coordinate during live match windows. The goal was to automate question generation while keeping human operators in control of review, edits and publishing.',
+
+    approach: [
+      'Built a FastAPI backend that integrates with Roanuz cricket feeds and internal tournament schedule APIs to retrieve match, innings, over-range and player-specific context.',
+      'Created a template-driven generation pipeline using Pandas CSV templates for pre-match, in-over, first-over, last-over, by-over and full-innings question types.',
+      'Generated multiple structured question templates including SLIDER, MULTI_SELECT, MULTI_BINARY and PLAYER_SELECT with tags, option metadata, player keys, over ranges and formatted text.',
+      'Added support for English and Hindi question text by switching localized template columns during generation.',
+      'Stored generated and published question documents in MongoDB with match, tournament, match-state and scope based lookup keys.',
+      'Implemented approval, rejection, option editing and publish workflows through a React LiveOps console with Google OAuth login and admin-only routing.',
+      'Added automated selection logic for short contests and player-specific contests, including bot-approved highlights and XGBoost-based recommendation infrastructure.'
+    ],
+
+    outcome:
+      'The system turns live cricket match and tournament data into reviewable, structured fantasy-question payloads, reducing manual content creation work while preserving operator control over final approvals and publishing.',
+
+    learnings: [
+      'Template-driven generation is effective for sports content because it keeps language, formatting and payload structure consistent while still adapting to match context.',
+      'Human-in-the-loop approval is important for live content systems where automation needs editorial oversight before publishing.',
+      'Separating generated drafts from published payloads makes it easier to audit, revise and compare content across match states.',
+      'Sports-data pipelines need robust branching for pre-toss, post-toss, live innings, short contest and player-specific scenarios because each state has different available context.'
+    ]
+  }
+},
   {
     slug: 'creative-ml-art-pipeline',
-    title: 'Creative ML-Art Pipeline',
+    title: 'Generative AI ML-Art Pipeline',
     thumbnail: { variant: 'creative-canvas', label: 'ML art', tone: 'hike' },
     eyebrow: 'Generative AI + Artist Tooling',
     source: 'hike',
     category: 'Hike / Production AI Tooling',
     summary:
-      'Custom AI tooling for artists using Stable Diffusion, ControlNet, img2img, inpainting, and upscaling to accelerate 2D and 3D asset creation.',
-    tech: ['Stable Diffusion', 'ControlNet', 'img2img', 'Inpainting', 'Upscaling'],
+      'Custom AI tooling for artists using Stable Diffusion, ControlNet, img2img, inpainting and upscaling to accelerate 2D and 3D asset creation.',
+    tech: ['Stable Diffusion', 'ControlNet', 'img2img', 'Inpainting', 'Upscaling', 'Automatic1111 Workflow'],
     metrics: ['~6x faster creative generation', '80% faster prompt creation', 'ML-art pipeline ownership'],
     readme: {
       overview:
         'This work focused on building practical generative AI tooling for artists. The goal was to make creative generation faster without removing the artist from the process.',
       problem:
-        'Artists needed tools that respected creative intent while reducing repetitive production effort. Generic image generation workflows were not enough; the tools had to support iteration, control, and production constraints.',
+        'Artists needed tools that respected creative intent while reducing repetitive production effort. Generic image generation workflows were not enough; the tools had to support iteration, control, custom outputs and production constraints.',
       approach: [
-        'Built workflows around Stable Diffusion, ControlNet, img2img, inpainting, and upscaling.',
-        'Created reusable prompt components and templates to speed up prompt construction.',
+        'Trained and fine-tuned Stable Diffusion models to better fit the company artistic style and content needs of the team.',
+        'Built workflows around Stable Diffusion, ControlNet, img2img, inpainting and upscaling.',
+        'Created prompt automation tool, reusable prompt components and templates to speed up prompt construction.',
         'Translated artist needs into technical requirements and model workflow design.',
         'Acted as the bridge between creative teams and engineering implementation.'
       ],
@@ -253,39 +357,37 @@ export const projects = [
         'The tooling achieved roughly a 6x speedup in creative generation and reduced prompt creation time by around 80%, while giving artists more control over the output process.',
       learnings: [
         'Creative AI tools need controllability more than novelty.',
-        'The best internal tools match the language and workflow of their users.',
-        'Being able to translate between artists and engineers is a major advantage in ML tooling.'
+        'The best internal tools match the language and workflow of their users.'
       ]
     }
   },
   {
     slug: '3d-asset-qa-automation',
-    title: '3D Asset QA Automation',
+    title: '3D Asset QA Automation - Unity',
     thumbnail: { variant: 'mesh', label: '3D pipeline', tone: 'hike' },
-    eyebrow: 'Graphics Tooling + Pipeline Automation',
+    eyebrow: 'Unity Graphics Tooling + Pipeline Automation',
     source: 'hike',
     category: 'Hike / Production Tooling',
     summary:
-      'Internal tooling and data pipelines for 3D asset production, validation, LOD generation, mesh intersection detection, and Unity-based QA workflows.',
-    tech: ['Unity3D', 'C#', 'Python', '3D Mesh Processing', 'Autodesk Maya'],
+      'Internal tooling and data pipelines for 3D asset production, validation, LOD generation, mesh intersection detection and Unity-based QA workflows.',
+    tech: ['Unity3D', 'C#', 'Python', '3D Mesh Processing', 'Autodesk Maya', 'PyMel'],
     metrics: ['~90% asset production/validation time saved', '80% LOD generation efficiency gain', '60% faster asset validation'],
     readme: {
       overview:
-        'This work focused on scaling 3D asset production and quality validation through internal tools, automation scripts, and Unity-based workflows.',
+        'This work focused on scaling 3D asset production and quality validation through internal tools, automation scripts and Unity-based workflows.',
       problem:
-        'Manual 3D asset validation is slow and error-prone. As asset volume grows, teams need automated checks for geometry, rigging, LODs, and production readiness.',
+        'Manual 3D asset validation is slow and error-prone. As asset volume grows, teams need automated checks for geometry, rigging, LODs and production readiness.',
       approach: [
-        'Built internal tooling and data pipelines to scale asset creation and validation.',
-        'Optimized automation scripts for level-of-detail generation.',
+        'Built unity-based internal tooling and data pipelines to scale asset creation and validation.',
+        'Optimized automation scripts for level-of-detail generation in PyMel.',
         'Developed a KD-tree based system to detect and resolve mesh intersections in 3D assets.',
         'Built a Unity-based QA console for rig checks and approval workflows.'
       ],
       outcome:
-        'The tooling reduced asset production and quality validation time by roughly 90%, improved LOD generation efficiency by 80%, and reduced 3D asset validation time by around 60%.',
+        'The tooling reduced asset production and quality validation time by roughly 90%, improved LOD generation efficiency by 80% and reduced 3D asset validation time by around 60%.',
       learnings: [
         'Pipeline tooling has a direct impact on creative team velocity.',
-        'Graphics workflows benefit from strong data structures and automation.',
-        'Good tools make quality checks easier to run, understand, and trust.'
+        'Good tools make quality checks easier to run, understand and trust.'
       ]
     }
   },
@@ -319,10 +421,9 @@ export const projects = [
         'Tested the experience around clarity, orientation, and user guidance.'
       ],
       outcome:
-        'The project shows my interest in spatial computing, Unity development, and interfaces that connect digital systems with real-world environments.',
+        'The project shows my interest in spatial computing, Unity development and interfaces that connect digital systems with real-world environments.',
       learnings: [
         'AR navigation needs visual clarity more than visual complexity.',
-        'Spatial interfaces require constant attention to user orientation.',
         'Unity is a strong environment for quickly prototyping embodied interfaces.'
       ]
     }
@@ -335,7 +436,7 @@ export const projects = [
     source: 'personal',
     category: 'Personal Project',
     summary:
-      'A C# and Unity3D game prototype built around thrust, obstacle avoidance, and a clean core gameplay loop.',
+      'A C# and Unity3D game prototype built around thrust, obstacle avoidance and a clean core gameplay loop.',
     tech: ['C#', 'Unity3D', 'Game Design'],
     metrics: ['Playable web build', 'Physics-based movement', 'Core loop design'],
     links: [
@@ -349,15 +450,15 @@ export const projects = [
       overview:
         'Galactic Survivor is a Unity-based 3D game prototype where the player guides a rocket from one point to another using thrust while avoiding obstacles.',
       problem:
-        'The goal was to build a complete, focused gameplay loop rather than a large unfinished game. I wanted the experience to be understandable quickly, mechanically responsive, and simple enough to polish within scope.',
+        'The goal was to build a complete, focused gameplay loop rather than a large unfinished game. I wanted the experience to be understandable quickly, mechanically responsive and simple enough to polish within scope.',
       approach: [
         'Implemented the core movement loop in C# using Unity physics.',
-        'Designed obstacle layouts around timing, thrust control, and recovery.',
+        'Designed obstacle layouts around timing, thrust control and recovery.',
         'Built a playable web version to make the project easy to share.',
         'Focused on clarity of controls and immediate feedback.'
       ],
       outcome:
-        'The project demonstrates my foundation in Unity, C#, gameplay mechanics, and interactive 3D experiences.',
+        'The project demonstrates my foundation in Unity, C#, gameplay mechanics and interactive 3D experiences.',
       learnings: [
         'A small, complete gameplay loop is stronger than a large unfinished prototype.',
         'Physics-based interaction requires careful tuning and repeated playtesting.',

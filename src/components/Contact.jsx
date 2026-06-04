@@ -40,7 +40,7 @@ export default function Contact() {
           </h2>
 
           <p className="contact-text contact-minimal-text">
-            I’m open to AI/ML engineering roles, creative AI collaborations, product prototypes,
+            I’m open to AI/ML engineering roles, creative AI collaborations, product prototypes
             and conversations about turning ambitious ideas into useful systems.
           </p>
 
