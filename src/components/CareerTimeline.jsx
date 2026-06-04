@@ -23,7 +23,7 @@ const timelineItems = [
     year: '2025–2026',
     label: 'Graduate Certificate',
     title: 'University of Utah',
-    subtitle: 'Deep Learning in AI & Robotics Graduate Certificate',
+    subtitle: 'Deep Learning in AI & Robotics',
     // body:
     //   'Formalized my AI foundation through graduate work in Machine Learning, Deep Learning, Neuro-Symbolic Modeling, NLP, Interactive Computer Graphics and applied ML systems.',
     tags: ['Machine Learning', 'Deep Learning', 'Research Projects'],

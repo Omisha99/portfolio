@@ -284,7 +284,7 @@ export const projects = [
   {
   slug: 'cricket-content-automation',
   title: 'AAA Cricket Content Automation Platform',
-  thumbnail: { variant: 'dashboard', label: 'LiveOps console', tone: 'sports-tech' },
+  thumbnail: { variant: 'dashboard', label: 'LiveOps console', tone: 'product' },
   eyebrow: 'Full-Stack Automation + Dynamic Content Generation',
   source: 'hike',
   category: 'Hike / Production AI Tooling',
