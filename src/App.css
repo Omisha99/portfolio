@@ -870,6 +870,44 @@ html.theme-transitioning *::after {
   filter: saturate(0.96) contrast(1.04);
 }
 
+.about-lede {
+  max-width: 760px;
+  margin-bottom: 1.8rem;
+  color: var(--text-soft);
+  font-size: clamp(1.15rem, 2vw, 1.55rem);
+  line-height: 1.55;
+  font-weight: 650;
+  letter-spacing: -0.035em;
+}
+
+.about-points {
+  display: grid;
+  gap: 1rem;
+  max-width: 840px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.about-points li {
+  position: relative;
+  padding-left: 1.6rem;
+  color: var(--text-muted);
+  font-size: clamp(1rem, 1.25vw, 1.08rem);
+  line-height: 1.75;
+}
+
+.about-points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 18px color-mix(in srgb, var(--accent) 42%, transparent);
+}
 
 /* ===== PROJECTS ===== */
 .project-grid {
