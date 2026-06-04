@@ -16,7 +16,7 @@ const experienceTabs = [
     roles: [
       {
         title: 'Data Science Intern',
-        date: '2025',
+        date: 'Jun 2025 – Aug 2025',
       },
     ],
     focus: [
