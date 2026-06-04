@@ -1,278 +1,244 @@
-.glitch-mode {
-    min-height: 100vh;
-    background: linear-gradient(to bottom right, #000000, #0a0a0a);
-    color: #fff;
-    padding: 4rem 2rem;
-    text-align: center;
-    font-family: 'Share Tech Mono', monospace;
-  }
-.glitch-mode-gal {
-    min-height: 100vh;
-    background: linear-gradient(65deg, #000000, #131313, #0a0a0a);
-    color: #fff;
-    padding: 4rem 2rem;
-    text-align: center;
-    font-family: 'Share Tech Mono', monospace;
-  }
-  
-  .glitch-heading {
-    font-size: 3rem;
-    color: #f0f;
-    animation: glitch 1s infinite;
-  }
-  .glitch-sub {
-    font-size: 1.2rem;
-    color: #a78bfa;
-    margin-top: 1rem;
-  }
-  
-  .glitch-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 2rem;
-    margin-top: 4rem;
-  }
-  
-  .glitch-card {
-    background: rgba(6, 11, 18, 0.324);
-    padding: 2rem;
-    border-radius: 12px;
-    border: 1px solid #a78bfa44;
-    color: #0ff;
-    box-shadow: 0 0 20px #0ff3;
-    transition: all 0.3s ease;
-    animation: flicker 3s infinite alternate;
-  }
-  
-  .glitch-card:hover {
-    transform: scale(1.05) rotate(-1deg);
-    box-shadow: 0 0 30px #f0f;
-    color: #f0f;
-  }
-  
-  /* Glitch Animation */
-  @keyframes glitch {
-    0% { text-shadow: 2px 0 red, -2px 0 cyan; }
-    25% { text-shadow: -2px 0 lime, 2px 0 magenta; }
-    50% { text-shadow: 1px -1px blue, -1px 1px red; }
-    75% { text-shadow: -2px 1px cyan, 2px -1px lime; }
-    100% { text-shadow: 0 0 white; }
-  }
-  
-  @keyframes flicker {
-    0% { opacity: 0.9; }
-    10% { opacity: 1; }
-    20% { opacity: 0.85; }
-    30% { opacity: 1; }
-    100% { opacity: 0.95; }
-  }
-  
-  .glitch-exit {
+/* Experimental playground theme: same Black Lime Studio tokens, more distorted. */
+.glitch-mode,
+.glitch-mode-gal,
+.glitch-gallery-page {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  color: var(--text, #F4F7F5);
+  padding: 4rem 2rem;
+  text-align: center;
+  font-family: 'Share Tech Mono', 'Inter', monospace;
+  background:
+    radial-gradient(circle at 18% 8%, var(--glow-secondary, rgba(103, 232, 212, 0.18)), transparent 28rem),
+    radial-gradient(circle at 82% 24%, var(--glow-primary, rgba(156, 255, 110, 0.18)), transparent 26rem),
+    linear-gradient(135deg, var(--bg, #080B0D), var(--bg-2, #0D1214));
+}
+
+.glitch-heading {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: var(--text, #F4F7F5);
+  font-size: clamp(2.4rem, 7vw, 4.5rem);
+  font-weight: 900;
+  letter-spacing: -0.08em;
+  text-shadow: 0 0 28px var(--glow-primary, rgba(156, 255, 110, 0.24));
+  animation: refined-glitch 2.6s infinite steps(2, end);
+}
+
+.glitch-sub,
+.glitch-sub-heading {
+  position: relative;
+  z-index: 1;
+  max-width: 780px;
+  margin: 1rem auto 0;
+  color: var(--text-muted, #A7B4B0);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.glitch-sub-heading {
+  color: var(--secondary, #67E8D4);
+  font-size: 1.25rem;
+}
+
+.glitch-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin: 4rem auto 0;
+  max-width: 1180px;
+}
+
+.glitch-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 220px;
+  padding: 2rem;
+  border-radius: 28px;
+  border: 1px solid var(--border, rgba(244, 247, 245, 0.11));
+  color: var(--text, #F4F7F5);
+  background: var(--surface, rgba(17, 24, 27, 0.78));
+  box-shadow: 0 24px 70px var(--shadow, rgba(0, 0, 0, 0.42));
+  backdrop-filter: blur(18px) saturate(140%);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.glitch-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(120deg, transparent, var(--glow-secondary, rgba(103, 232, 212, 0.16)), transparent),
+    radial-gradient(circle at 85% 10%, var(--glow-primary, rgba(156, 255, 110, 0.16)), transparent 36%);
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.glitch-card > * {
+  position: relative;
+}
+
+.glitch-card h3 {
+  margin-top: 0;
+  color: var(--primary, #9CFF6E);
+}
+
+.glitch-card p {
+  color: var(--text-muted, #A7B4B0);
+}
+
+.glitch-card:hover {
+  transform: translateY(-8px) rotate(-0.5deg);
+  border-color: var(--border-strong, rgba(156, 255, 110, 0.32));
+  box-shadow: 0 28px 80px var(--shadow, rgba(0, 0, 0, 0.42)), 0 0 0 1px var(--glow-primary, rgba(156, 255, 110, 0.20));
+}
+
+@keyframes refined-glitch {
+  0%, 88%, 100% { text-shadow: 0 0 28px var(--glow-primary, rgba(156, 255, 110, 0.24)); transform: translate(0, 0); }
+  90% { text-shadow: 2px 0 var(--primary, #9CFF6E), -2px 0 var(--secondary, #67E8D4); transform: translate(-1px, 1px); }
+  92% { text-shadow: -2px 0 var(--pink, #F6A6D8), 2px 0 var(--blue, #8EC5FF); transform: translate(1px, -1px); }
+}
+
+.glitch-exit,
+.glitch-exit-gal,
+.glitch-mini-but {
+  position: relative;
+  z-index: 1;
   margin-top: 3rem;
-  background: transparent;
-  border: 1px solid #f0f;
-  padding: 0.8rem 1.4rem;
-  color: #f0f;
+  padding: 0.8rem 1.2rem;
+  border: 1px solid var(--border-strong, rgba(156, 255, 110, 0.32));
+  border-radius: 999px;
+  color: var(--primary, #9CFF6E);
+  background: var(--glass, rgba(255, 255, 255, 0.045));
   font-family: inherit;
-  border-radius: 8px;
+  font-weight: 800;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: transform 0.25s ease, border-color 0.25s ease, color 0.25s ease, background 0.25s ease;
 }
 
-.glitch-exit:hover {
-  background: #f0f3;
-  color: rgb(255, 255, 255);
-}
-  .glitch-exit-gal {
-  /* margin-top: 3rem; */
-  background: transparent;
-  border: 1px solid #f0f;
-  padding: 0.8rem 0.6rem;
-  color: #f0f;
-  font-family: inherit;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin-left: 80%;
+.glitch-exit:hover,
+.glitch-exit-gal:hover,
+.glitch-mini-but:hover {
+  transform: translateY(-3px);
+  color: var(--bg, #080B0D);
+  background: linear-gradient(135deg, var(--primary, #9CFF6E), var(--secondary, #67E8D4));
+  border-color: transparent;
 }
 
-.glitch-exit-gal:hover {
-  background: #f0f3;
-  color: rgb(255, 255, 255);
+.glitch-exit-gal {
+  margin: 0 0 2rem auto;
+  display: block;
+}
+
+.glitch-mini-but {
+  margin-top: 1.2rem;
 }
 
 .glitch-strings {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    overflow: hidden;
-    z-index: 0;
-  }
-  
-  .glitch-string {
-    position: fixed;
-    top: -20%;
-    width: 2px;
-    height: 100vh;
-    background: linear-gradient(to bottom, transparent, rgba(255, 0, 255, 0.395), transparent);
-    animation: glitch-fall linear infinite;
-    opacity: 0.2;
-    border-radius: 1px;
-    filter: blur(1px);
-  }
-  
-  @keyframes glitch-fall {
-    0% {
-      transform: translateY(-100%);
-      opacity: 0;
-    }
-    10% {
-      opacity: 0.3;
-    }
-    50% {
-      opacity: 0.5;
-    }
-    100% {
-      transform: translateY(100%);
-      opacity: 0;
-    }
-  }
-  
-  .glitch-canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 0;
-    pointer-events: none;
-    opacity: 0.12;
-    mix-blend-mode: lighten;
-  }
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
 
-  /* .hero-avatar-wrapper-g {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
-  
-   */
-  .avatar-fade-container-g {
-    position: relative;
-    width: 160px;
-    height: 160px;
-    margin: 2rem auto;
-    cursor: pointer;
-  }
-  
-  .avatar-img-g {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-    transition: opacity 0.6s ease, transform 0.6s ease;
-    box-shadow: 0 0 12px #72f3ff6e;
-    background: #82fffb25;
-  }
-  
-  /* Fade out normal avatar upwards */
-  .fade-top.fade-out {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  
-  /* Fade in glitch avatar from below */
-  .fade-bottom {
-    opacity: 0;
-    transform: translateY(20px);
-    z-index: 1;
-  }
-  
-  .fade-bottom.fade-in {
-    opacity: 1;
-    transform: translateY(0px);
-  }
-  
-  .art-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 1.5rem;
-    padding: 2rem 0;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .art-card {
-    overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 0 12px rgba(167, 139, 250, 0.08);
-    transition: transform 0.2s ease;
-    cursor: pointer;
-  }
-  
-  .art-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 14px rgba(198, 139, 250, 0.637);
-  }
-  
-  .art-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .gallery-modal {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(6px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-  }
-  
-  .gallery-modal img {
-    max-width: 90vw;
-    max-height: 90vh;
-    border-radius: 12px;
-    box-shadow: 0 0 24px #a78bfa66;
-  }
-  
-  .close-button {
-    position: absolute;
-    top: 1.5rem;
-    right: 2rem;
-    font-size: 2rem;
-    background: none;
-    border: none;
-    color: #232323;
-    cursor: pointer;
-  }
-  .close-button:hover {
-    background: none;
-    color: #88003d;
-    cursor: pointer;
-  }
-  
-  .glitch-mini-but {
-    margin-top: 3rem;
-    background: transparent;
-    border: 1px solid rgb(0, 255, 255);
-    padding: 0.8rem 1.4rem;
-    color: rgb(0, 217, 255);
-    font-family: inherit;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  
-  .glitch-mini-but:hover {
-    background: rgba(0, 238, 255, 0.2);
-    color: rgb(255, 255, 255);
-  }
+.glitch-string {
+  position: fixed;
+  top: -20%;
+  width: 2px;
+  height: 100vh;
+  background: linear-gradient(to bottom, transparent, var(--secondary, #67E8D4), transparent);
+  animation: glitch-fall linear infinite;
+  opacity: 0.13;
+  border-radius: 1px;
+  filter: blur(1px);
+}
+
+@keyframes glitch-fall {
+  0% { transform: translateY(-100%); opacity: 0; }
+  10% { opacity: 0.16; }
+  50% { opacity: 0.24; }
+  100% { transform: translateY(100%); opacity: 0; }
+}
+
+.glitch-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.10;
+  mix-blend-mode: lighten;
+}
+
+.avatar-fade-container-g {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  margin: 2rem auto;
+  cursor: pointer;
+}
+
+.art-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  padding: 2rem 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.art-card {
+  overflow: hidden;
+  border-radius: 24px;
+  border: 1px solid var(--border, rgba(244, 247, 245, 0.11));
+  background: var(--surface, rgba(17, 24, 27, 0.78));
+  box-shadow: 0 18px 55px var(--shadow, rgba(0, 0, 0, 0.42));
+  transition: transform 0.25s ease, border-color 0.25s ease;
+  cursor: pointer;
+}
+
+.art-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  border-color: var(--border-strong, rgba(156, 255, 110, 0.32));
+}
+
+.art-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 11, 13, 0.82);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.gallery-modal img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 24px;
+  box-shadow: 0 28px 80px var(--shadow, rgba(0, 0, 0, 0.42));
+}
+
+.close-button {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  width: auto;
+  min-height: auto;
+}

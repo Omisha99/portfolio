@@ -1,13 +1,16 @@
 // src/components/GalleryGrid.jsx
 import { useState } from "react";
 import "./GlitchTheme.css";
+import { useNavigate } from "react-router";
+
 
 export default function GalleryGrid({ title, images, id }) {
   const [selected, setSelected] = useState(null);
+  const navigate = useNavigate();
 
   return (
     <section className="glitch-mode-gal" id={id}>
-      <button onClick={() => window.location.href = "/glitch"} className="glitch-exit-gal">
+      <button onClick={() => navigate("/glitch")} className="glitch-exit-gal">
       Back to Glitch 👈
       </button>
       <h2 className="glitch-heading">{title}</h2>
@@ -24,7 +27,7 @@ export default function GalleryGrid({ title, images, id }) {
           </div>
         ))}
       </div>
-      <button onClick={() => window.location.href = "/glitch"} className="glitch-exit-gal">
+      <button onClick={() => navigate("/glitch")} className="glitch-exit-gal">
       Back to Glitch 👈
       </button>
 

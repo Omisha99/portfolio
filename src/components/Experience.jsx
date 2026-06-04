@@ -1,109 +1,219 @@
+import { useState } from 'react';
+import { Link } from 'react-router';
 import '../App.css';
-import { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+
+const experienceTabs = [
+  {
+    id: 'kaiser',
+    number: '01',
+    company: 'Kaiser Permanente',
+    label: 'Data Science Intern',
+    date: '2025',
+    eyebrow: 'Healthcare AI + Data Science',
+    roleSummary: 'Data Science Intern',
+    summary:
+      'Worked on AI-assisted analytics and data science workflows for healthcare operations, with a focus on practical, reliable, and interpretable systems.',
+    roles: [
+      {
+        title: 'Data Science Intern',
+        date: '2025',
+      },
+    ],
+    focus: [
+      'Built data workflows for operational analytics and decision support.',
+      'Explored AI-assisted tooling for faster analysis, reporting, and insight generation.',
+      'Worked in a healthcare setting where reliability, privacy, and interpretability matter.',
+    ],
+    tags: ['Healthcare AI', 'Data Science', 'Analytics', 'ML Workflows'],
+    projects: [],
+  },
+  {
+    id: 'hike',
+    number: '02',
+    company: 'Hike Pvt. Ltd.',
+    label: 'Senior Machine Learning Engineer',
+    date: '2020–2024',
+    eyebrow: 'Production AI + Creative ML Systems',
+    roleSummary:
+      'Senior Machine Learning Engineer', 
+      // → Machine Learning Engineer → Software Development Engineer → Software Graphics Intern',
+    summary:
+      'Built AI products, ML tooling, game-tech systems, and artist-facing workflows across LLMs, voice AI, generative models, computer vision, and 3D pipelines.',
+    roles: [
+      {
+        title: 'Senior Machine Learning Engineer',
+        date: 'Jan 2024 – Aug 2024',
+      },
+      {
+        title: 'Machine Learning Engineer',
+        date: 'Jan 2023 – Dec 2023',
+      },
+      {
+        title: 'Software Development Engineer',
+        date: 'Aug 2021 – Dec 2022',
+      },
+      {
+        title: 'Software Graphics Intern',
+        date: 'Jan 2020 – Jul 2021',
+      },
+    ],
+    focus: [
+      'Built LLM-powered tools for document workflows, support automation, and internal productivity.',
+      'Developed voice AI, chatbot, and AI platform systems for product and game teams.',
+      'Created creative ML tooling using Stable Diffusion, ControlNet, image pipelines, and artist-facing automation.',
+      'Built graphics, Unity, mesh-processing, and 3D asset tooling for production workflows.',
+    ],
+    tags: [
+      'LLMs',
+      'Voice AI',
+      'Creative AI',
+      'Game AI',
+      'Computer Vision',
+      'Unity',
+      '3D Tooling',
+    ],
+    projects: [
+      {
+        label: 'Google Docs Assistant',
+        slug: 'google-docs-assistant',
+      },
+      {
+        label: 'Voice AI Chatbot',
+        slug: 'voice-ai-support-chatbot',
+      },
+      {
+        label: 'AAA Cricket AI Platform',
+        slug: 'aaa-cricket-ai-platform',
+      },
+      {
+        label: 'Creative ML-Art Tooling',
+        slug: 'creative-ml-art-pipeline',
+      },
+      {
+        label: '3D Asset QA Automation',
+        slug: '3d-asset-qa-automation',
+      },
+    ],
+  },
+];
 
 export default function Experience() {
-  useEffect(() => {
-    AOS.init({ once: true, duration: 700 });
-  }, []);
-
-  const experiences = [
-    {
-      title: 'Data Science Graduate Intern',
-      company: 'Kaiser Permanente',
-      stack: 'Python, PySpark, Databricks',
-      date: 'June 2025 – August 2025',
-      bullets: [
-        'Performed exploratory data analysis (EDA) on large-scale healthcare datasets to uncover key behavioral and demographic trends',
-        'Generated actionable insights to support data-driven strategy for member engagement initiatives',
-        'Implemented predictive models to improve membership experience and loyalty program engagement'
-      ]
-    },
-    {
-      title: 'Senior Machine Learning Engineer',
-      company: 'Hike Pvt. Ltd.',
-      stack: 'Python, FastAPI, React, MongoDB',
-      date: 'Jan 2024 – Sep 2024',
-      bullets: [
-        'Led the development of text-to-speech pipeline, optimizing automated customer support interactions for better efficiency and user experience.',
-        'Designed and fine-tuned a distinctive voice for the customer support mascot, strengthening brand identity and engagement.',
-        'Developed a full-stack AI-powered customer support chatbot (FastAPI, React), integrating speech-to-text  and text-to-speech  for real-time bot interaction testing and evaluation.'
-      ],
-      link: 'https://www.linkedin.com/company/hike/'
-    },
-    {
-      title: 'Machine Learning Engineer',
-      company: 'Hike Pvt. Ltd.',
-      stack: ' Python, FastAPI, React, Stable Diffusion, ControlNet, MongoDB',
-      date: 'Jan 2023 – Dec 2023',
-      bullets: [
-        'Developed a full-stack content automation platform and API for AAA game in Rush app.',
-        'Optimized 2D/3D art generation using Stable Diffusion + ControlNet.',
-        'Reduced content generation time by 50%.'
-      ],
-      link: 'https://www.linkedin.com/company/hike/'
-    },
-    {
-      title: 'Software Development Engineer',
-      company: 'Hike Pvt. Ltd.',
-      stack: 'Python, C#, Unity3D, Autodesk Maya, Blender, MongoDB, PyMel',
-      date: 'Aug 2021 – Dec 2022',
-      bullets: [
-        'Prototyped tools for mesh cleanup, LoD generation, and asset QA.',
-        'Generated 1000+ outfit patterns & Unity based standalone built approval tool.',
-        'Created standalone Unity tools for avatar data annotation.'
-      ],
-      link: 'https://www.linkedin.com/company/hike/'
-    },
-    {
-      title: 'Software Graphics Intern',
-      company: 'Hike Pvt. Ltd.',
-      stack: 'Python, C#, Unity3D',
-      date: 'Jun 2020 – Jul 2021',
-      bullets: [
-        'Built face landmark detection for 2D avatars (OpenCV + dlib).',
-        'Automated normal map generation from textures.'
-      ],
-      link: 'https://www.linkedin.com/company/hike/'
-    }
-  ];
+  const [activeId, setActiveId] = useState('hike');
+  const activeExperience =
+    experienceTabs.find((item) => item.id === activeId) || experienceTabs[0];
 
   return (
-    <div data-aos="fade-up" data-aos-delay="200">
+    <section
+      className="experience-section experience-browser-section"
+      id="experience"
+      data-aos="fade-up"
+    >
+      <div className="experience-browser-shell">
+        <div className="experience-browser-heading">
+          <p className="section-kicker">Work</p>
+          <h2 className="experience-heading">Experience</h2>
+        </div>
 
-    <section className="experience-section timeline-container">
-      <div className="experience-content">
-        <h2 className="experience-heading">Experience</h2>
-        <div className="timeline">
-          {experiences.map((exp, idx) => (
-            <div key={idx} className="timeline-item" data-aos="fade-up">
-              <div className="timeline-dot" />
-              <div className="timeline-content">
-                {/* <h3>{exp.title}<a href="linke.in"><span> @ {exp.company}</span></a></h3> */}
-                <h3>{exp.title}
-                   {exp.link ? (
-                      <a href={exp.link} target="_blank" rel="noopener noreferrer">
-                        <span> @ {exp.company}</span>
-                      </a>
-                    ) : (
-                      <span> @ {exp.company}</span>
-                    )}
-                </h3>
-                {/* <h3>{exp.title}<span> @ {exp.company}</span></h3> */}
-                <p className="exp-date">{exp.stack}</p>
-                <p className="exp-date">{exp.date}</p>
-                <ul>
-                  {exp.bullets.map((point, i) => (
-                    <li key={i}>{point}</li>
+        <div className="experience-browser">
+          <div className="experience-browser-tabs" aria-label="Experience tabs">
+            {experienceTabs.map((item) => (
+              <button
+                type="button"
+                key={item.id}
+                className={`experience-browser-tab ${
+                  activeId === item.id ? 'is-active' : ''
+                }`}
+                onClick={() => setActiveId(item.id)}
+              >
+                <span className="experience-tab-number">{item.number}</span>
+
+                <span className="experience-tab-copy">
+                  <span className="experience-tab-company">{item.company}</span>
+                  <span className="experience-tab-label">{item.label}</span>
+                </span>
+
+                <span className="experience-tab-date">{item.date}</span>
+              </button>
+            ))}
+          </div>
+
+          <article className="experience-browser-panel">
+            <div className="experience-panel-topline">
+              <p className="experience-panel-eyebrow">
+                {activeExperience.eyebrow}
+              </p>
+              <span>{activeExperience.date}</span>
+            </div>
+
+            <h3>{activeExperience.company}</h3>
+
+            <p className="experience-panel-role">
+              {activeExperience.roleSummary}
+            </p>
+
+            <p className="experience-panel-summary">
+              {activeExperience.summary}
+            </p>
+
+            <div className="experience-panel-grid">
+              <div>
+                <h4>Roles</h4>
+
+                <div className="experience-role-stack">
+                  {activeExperience.roles.map((role) => (
+                    <div className="experience-role-pill" key={role.title}>
+                      <strong>{role.title}</strong>
+                      <span>{role.date}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <h4>Focus</h4>
+
+                <ul className="experience-focus-list">
+                  {activeExperience.focus.map((item) => (
+                    <li key={item}>{item}</li>
                   ))}
                 </ul>
               </div>
             </div>
-          ))}
+
+            <div className="experience-tag-row">
+              {activeExperience.tags.map((tag) => (
+                <span key={tag}>{tag}</span>
+              ))}
+            </div>
+
+            {activeExperience.projects.length > 0 && (
+              <div className="experience-related">
+                <h4>Related projects</h4>
+
+                <div className="experience-project-chip-row">
+                  {activeExperience.projects.map((project) => (
+                    <Link
+                      key={project.slug}
+                      to={`/projects/${project.slug}`}
+                      state={{
+                        backTo: '/#experience',
+                        backLabel: 'Back to Experience',
+                      }}
+                      className="experience-project-chip"
+                    >
+                      {project.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+          </article>
+        </div>
+         <div className="career-timeline-cta" data-aos="fade-up">
+          <span>Want the full path?</span>
+          <Link to="/career-timeline">View full career timeline →</Link>
         </div>
       </div>
     </section>
-      </div>
   );
 }
