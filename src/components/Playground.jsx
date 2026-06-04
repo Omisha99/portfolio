@@ -1,14 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router';
 import './GlitchTheme.css';
-import avatarGlitch from '../assets/glitchAvatar.png';
-import avatarNormal from '../assets/avatar.png';
+import pixelAvatar from '../assets/pixel_portrait.png';
 import glitchZap from '../assets/zap.mp3';
 
 const RETURN_COVER_DELAY_MS = 1800;
 
 export default function Playground() {
-  const [hovered, setHovered] = useState(false);
   const [isReturning, setIsReturning] = useState(false);
   const navigate = useNavigate();
   const canvasRef = useRef(null);
@@ -87,39 +85,36 @@ export default function Playground() {
     <section className="glitch-mode">
       <canvas ref={canvasRef} className="glitch-canvas" />
 
-      <div className="glitch-strings">
+      <div className="glitch-strings" aria-hidden="true">
         {Array.from({ length: 30 }).map((_, index) => (
           <div
             key={index}
             className="glitch-string"
             style={{
-              left: `${Math.random() * 100}%`,
-              animationDuration: `${2 + Math.random() * 4}s`,
-              animationDelay: `${Math.random() * 5}s`,
-              background: `linear-gradient(to bottom, transparent, hsla(${Math.random() * 360}, 100%, 70%, 0.2), transparent)`,
+              '--streak-left': `${((index * 37) % 100) + 0.5}%`,
+              '--streak-duration': `${3.2 + (index % 6) * 0.42}s`,
+              '--streak-delay': `${(index % 10) * -0.34}s`,
+              '--streak-opacity': `${0.18 + (index % 4) * 0.035}`,
             }}
           />
         ))}
       </div>
 
-      <div className="hero-avatar-wrapper">
-        <div
-          className="avatar-fade-container"
-          onMouseEnter={() => setHovered(true)}
-          onMouseLeave={() => setHovered(false)}
-          onClick={handleReturnToReality}
-        >
-          <img
-            src={avatarGlitch}
-            alt="Glitch Avatar"
-            className={`avatar-img-g fade-top ${hovered ? 'fade-out' : ''}`}
-          />
-          <img
-            src={avatarNormal}
-            alt="Avatar"
-            className={`avatar-img-g fade-bottom ${hovered ? 'fade-in' : ''}`}
-          />
-        </div>
+      {/* <img
+        src={pixelAvatar}
+        alt="Pixel avatar of Omisha"
+        className="glitch-floating-avatar"
+      /> */}
+
+      <div className="glitch-floating-avatar-wrap" tabIndex="0">
+        <img
+          src={pixelAvatar}
+          alt="Pixel avatar"
+          className="glitch-floating-avatar"
+        />
+        <span className="glitch-avatar-dialogue">
+          Engineer at heart. Artist by instinct.
+        </span>
       </div>
 
       <h1 className="glitch-heading">⧉ Glitch Init</h1>

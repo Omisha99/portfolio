@@ -12,7 +12,7 @@ export default function About() {
 </p>
 
 <p className="about-paragraph">
-  I hold an M.S. in Computer Science and a Graduate Certificate in Deep Learning &amp; AI Robotics from the University of Utah. I bring a systems-first approach to AI: designing model workflows, product interfaces, and engineering pipelines that are practical, scalable, and usable by real teams.
+  I hold an M.S. in Computer Science and a Graduate Certificate in Deep Learning in AI &amp; Robotics from the University of Utah. I bring a systems-first approach to AI: designing model workflows, product interfaces, and engineering pipelines that are practical, scalable, and usable by real teams.
 </p>
 
 <p className="about-paragraph">
