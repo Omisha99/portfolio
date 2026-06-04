@@ -10,7 +10,7 @@ export default function ComingSoon() {
 
   return (
     <section className="glitch-mode-gal">
-    <button onClick={() => window.location.href = "/glitch"} className="glitch-exit-gal">
+    <button onClick={() => navigate("/glitch")} className="glitch-exit-gal">
     Back to Glitch 👈
     </button>
     <h2 className="glitch-heading"> ✨ Prototype in the Lab</h2>
