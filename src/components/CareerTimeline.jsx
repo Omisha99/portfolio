@@ -8,13 +8,25 @@ const timelineItems = [
     id: 'uofu-grad',
     track: 'education',
     icon: <FaGraduationCap />,
-    year: '2024–2025',
-    label: 'Graduate',
+    year: '2024–2026',
+    label: 'Master of Science',
     title: 'University of Utah',
-    subtitle: 'M.S. Computer Science + Deep Learning in AI & Robotics Graduate Certificate',
+    subtitle: 'M.S. Computer Science',
     body:
       'Formalized my AI foundation through graduate work in Machine Learning, Deep Learning, Neuro-Symbolic Modeling, NLP, Interactive Computer Graphics and applied ML systems.',
     tags: ['Graduate CS', 'Machine Learning', 'Deep Learning', 'Research Projects'],
+  },
+  {
+    id: 'uofu-grad',
+    track: 'education',
+    icon: <FaGraduationCap />,
+    year: '2025–2026',
+    label: 'Graduate Certificate',
+    title: 'University of Utah',
+    subtitle: 'Deep Learning in AI & Robotics Graduate Certificate',
+    // body:
+    //   'Formalized my AI foundation through graduate work in Machine Learning, Deep Learning, Neuro-Symbolic Modeling, NLP, Interactive Computer Graphics and applied ML systems.',
+    tags: ['Machine Learning', 'Deep Learning', 'Research Projects'],
   },
   {
     id: 'kaiser',
