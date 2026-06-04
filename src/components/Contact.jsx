@@ -64,7 +64,7 @@ export default function Contact() {
               <FaGithub />
             </a>
             <a
-              href="https://drive.google.com/file/d/1KvstXP2beLIyj9ptbu7pVHbAdSxfWuVP/view?usp=sharing"
+              href="https://drive.google.com/file/d/1OLzuxHuMGDQI-GSjZzFP5DHu0Gz2DHAG/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Resume"

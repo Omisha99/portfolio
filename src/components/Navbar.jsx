@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { FaMoon, FaSun } from 'react-icons/fa';
+import { FaMoon, FaSun , FaFileDownload} from 'react-icons/fa';
 import '../App.css';
 import ThemeToggle from './ThemeToggle';
 
@@ -53,7 +53,18 @@ export default function Navbar({ theme, toggleTheme }) {
             );
           })}
         </ul>
+         <a
+            className="nav-resume"
+            href="https://drive.google.com/file/d/1OLzuxHuMGDQI-GSjZzFP5DHu0Gz2DHAG/view?usp=sharing"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Resume"
+            title="View Resume"
+          >
+            Resume
+          </a>
 
+          
         {/* <button
           type="button"
           className="theme-toggle"
