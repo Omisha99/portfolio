@@ -12,7 +12,7 @@ export const projectSourceLabels = {
 };
 
 export const projects = [
-  {
+   {
     slug: 'synaptica-ai',
     title: 'Synaptica AI',
     thumbnail: { variant: 'network', label: 'LLM routing', tone: 'university' },
@@ -20,13 +20,13 @@ export const projects = [
     source: 'university',
     category: 'Research Project',
     summary:
-      'A neurosymbolic routing system that combines symbolic rules with neural classifiers to route queries across expert models for reasoning, coding, and truthfulness tasks.',
+      'A neurosymbolic routing system that combines symbolic rules with neural classifiers to route queries across expert models for reasoning coding and truthfulness tasks.',
     tech: ['PyTorch', 'Hugging Face', 'Gradio', 'Neurosymbolic AI'],
     metrics: ['91%+ routing accuracy', 'GSM8K / MBPP / TruthfulQA', 'Local inference optimization'],
     links: [
       {
         label: 'Read Paper',
-        href: 'ADD_SYNAPTICA_PAPER_LINK_HERE',
+        href: 'https://drive.google.com/file/d/12PIRJ1gDDSck4XjKyyt8jNigltEtr8ik/view?usp=drive_link',
         type: 'paper'
       }
     ],
@@ -34,172 +34,103 @@ export const projects = [
       overview:
         'Synaptica AI explores how symbolic structure and neural models can work together inside an LLM orchestration layer. Instead of sending every prompt to a single model or relying on generic routing logic, the system classifies the intent of a query and routes it to a more appropriate expert path.',
       problem:
-        'LLM applications often struggle with reliability when tasks vary widely across math, code, factual reasoning, and general instruction following. A single model path can become expensive, inconsistent, or difficult to evaluate. I wanted to build a routing system that made model behavior more structured and measurable.',
+        'LLM applications often struggle with reliability when tasks vary widely across math, code, factual reasoning and general instruction following. A single model path can become expensive, inconsistent or difficult to evaluate. We wanted to build a routing system that made model behavior more structured and measurable.',
       approach: [
         'Designed a hybrid routing architecture combining symbolic rules with neural classifiers.',
-        'Evaluated routing behavior across GSM8K, MBPP, and TruthfulQA style tasks.',
+        'Evaluated routing behavior across GSM8K, MBPP and TruthfulQA style tasks.',
         'Ran ablation studies to understand how symbolic constraints and classifier outputs affected routing accuracy.',
         'Optimized the system for efficient local inference and a usable Gradio interface.'
       ],
       outcome:
-        'The system achieved 91%+ routing accuracy and gave me a stronger framework for thinking about reliability, evaluation, and task-aware LLM workflows.',
+        'The system achieved 91%+ routing accuracy and gave us a stronger framework for thinking about reliability, evaluation and task-aware LLM workflows.',
       learnings: [
         'Routing quality matters as much as model quality in multi-model AI systems.',
         'Symbolic constraints can make LLM applications easier to evaluate and debug.',
-        'A simple interface is useful for testing model behavior with non-research users.'
+        // 'A simple interface is useful for testing model behavior with non-research users.'
       ]
     }
   },
   {
     slug: 'plant-viability-cv-system',
-    title: 'Plant Inventory & Viability Assessment System',
-    thumbnail: { variant: 'vision-grid', label: 'Tray vision', tone: 'university' },
+    title: 'Computer Vision Plant Viability',
+    thumbnail: { variant: 'vision', label: 'Tray vision', tone: 'university' },
     eyebrow: 'Computer Vision + Full-Stack ML',
     source: 'university',
-    category: 'Research Project',
+    category: 'Capstone Project',
+  
     summary:
-      'An end-to-end computer vision pipeline that processes mobile-captured tray images to estimate plant viability with structured outputs and a web interface.',
-    tech: ['YOLOv8', 'ResNet-18', 'FastAPI', 'React', 'OpenCV'],
-    metrics: ['96.7% cell-level accuracy', '6.01% tray-level MAE', 'Custom React annotation tool'],
+      'An end-to-end computer vision system for estimating seedling tray viability from mobile-captured nursery images using tray segmentation, grid recovery and per-cell occupancy classification.',
+    tech: ['PyTorch', 'YOLOv8', 'ResNet-18', 'OpenCV', 'FastAPI', 'Gradio', 'React'],
+    metrics: ['96.74% cell validity accuracy', '6.01% point tray viability MAE', '1.65 s median inference time'],
     links: [
       {
         label: 'Read Paper',
-        href: 'ADD_PLANT_PAPER_LINK_HERE',
+        href: 'https://drive.google.com/file/d/1Nhmzc8vNtm9nRR7XetRcEZaxFVTUmlt1/view?usp=sharing',
         type: 'paper'
       }
     ],
     readme: {
       overview:
-        'This project is a full-stack computer vision system for analyzing mobile-captured tray images. The pipeline detects tray structure, classifies cell-level viability, and aggregates predictions into tray-level metrics that can be reviewed through a web interface.',
+        'This project was developed as a deep learning capstone for project sponsor - BloomLogic. The project is a computer vision pipeline for automated seedling tray viability assessment. The system takes a raw tray photograph, detects and rectifies the tray, recovers the grid layout, classifies each cell as occupied or empty and returns a tray-level viability percentage with per-cell results and an annotated overlay.',
       problem:
-        'Manual plant viability assessment can be slow, inconsistent, and difficult to scale. The goal was to create a repeatable image-based workflow that could turn field or greenhouse imagery into structured, decision-ready outputs.',
+        'Nursery teams need to assess hundreds of trays with 50 to 200+ cells each, but manual visual inspection is slow, subjective and difficult to scale. The goal was to replace rough tray-level estimates with a structured pipeline that could produce consistent cell-level predictions from real nursery images.',
       approach: [
-        'Built an inference service with FastAPI for model execution and structured response generation.',
-        'Used YOLOv8 and OpenCV for image processing and tray/cell localization workflows.',
-        'Trained a ResNet-18 based classifier for cell-level viability prediction.',
-        'Created a React annotation interface to support consistent data labeling and review.',
-        'Aggregated cell-level predictions into tray-level viability estimates.'
+        'Developed a React based annotation interface to support consistent grid-aligned data labeling and review.',
+        'Trained a YOLOv8 tray segmentation model to isolate the tray region and support perspective rectification.',
+        'Built a confidence-gated grid detection cascade using a ResNet-18 grid classifier with separator-based fallback logic.',
+        'Extracted individual tray cells from the recovered grid and classified each crop as occupied or empty using a ResNet-18 validity model.',
+        'Integrated the pipeline into a FastAPI backend and Gradio interface for image upload, threshold control, overlay visualization and JSON output.'
       ],
       outcome:
-        'The system achieved 96.7% cell-level classification accuracy and 6.01% mean absolute error at the tray level, making the workflow more consistent and scalable.',
+      'The system achieved 96.74% cell-level classification accuracy and 6.01 percentage points mean absolute error at the tray level, making the workflow more consistent and scalable.',
       learnings: [
-        'CV systems need strong data tooling, not just strong models.',
-        'Structured outputs make model results easier to trust and integrate.',
-        'End-to-end ML products require careful alignment between annotation, inference, and UI.'
+        'Accurate tray rectification and grid recovery are critical because small spatial errors can affect many downstream cell predictions.',
+        'Confidence-gated fallback logic can make a vision pipeline more robust when labeled data is limited across tray types.',
+        'Per-cell structured outputs and visual overlays make model behavior easier to inspect, debug and communicate to users.'
       ]
     }
   },
   {
     slug: 'travel-orb',
-    title: 'TravelOrb',
+    title: 'Travel Orb',
     thumbnail: { variant: 'orbital-map', label: 'Travel data', tone: 'university' },
     eyebrow: 'Interactive Data Visualization',
     source: 'university',
     category: 'Course / University Project',
     summary:
-      'An interactive tourism analytics experience that uses D3.js and React to make global travel trends easier to explore and compare.',
-    tech: ['D3.js', 'React', 'Data Visualization', 'JavaScript'],
-    metrics: ['Interactive global tourism trends', '30% better comprehension goal', 'Published web demo'],
+      'An interactive tourism analytics platform that uses React and D3.js to explore global travel patterns, country-level tourism trends, aviation activity and environmental impact.',
+    tech: ['React', 'D3.js', 'JavaScript', 'TopoJSON', 'Data Visualization'],
+    metrics: ['Interactive globe and choropleth maps', '1995-2022 international tourist trip data', '30% better comprehension goal', 'Published web demo'],
     links: [
       {
         label: 'View Project',
         href: 'https://dataviscourse2024.github.io/travel-orb/',
         type: 'demo'
+      },
+      {
+        label: 'Course Hall of Fame',
+        href: 'https://www.dataviscourse.net/2025/fame/#:~:text=Mention%20Project%20Video-,TravelOrb',
+        type: 'external'
       }
     ],
     readme: {
       overview:
-        'TravelOrb is an interactive data visualization platform for exploring global tourism trends. It was built to turn dense travel datasets into a more intuitive visual experience through charts, interaction, and guided exploration.',
+        'Travel Orb is an interactive web-based data visualization project for exploring global tourism trends and their economic and environmental effects. It combines map-based views, country drill-downs and time-series charts to make international travel data easier to compare.',
       problem:
-        'Tourism data can be difficult to understand when presented as static tables or generic charts. The goal was to design a more engaging interface where users could compare destinations, understand patterns, and move through the data without needing a technical background.',
+        'Tourism data can be difficult to understand when presented as static tables or generic charts. The goal was to design a more engaging interface where users could compare destinations, understand patterns and move through the data without needing a technical background.',
       approach: [
-        'Used D3.js to create dynamic visualizations for tourism trend exploration.',
-        'Built the interface in React to keep the experience modular and responsive.',
-        'Focused on visual hierarchy, interaction, and data comprehension instead of chart density.',
-        'Published the project as a web-accessible demo.'
+        'Built the interface in React with routed views for maps, country pages and supporting visualizations.',
+        'Used D3.js to render an interactive rotating globe, choropleth maps, line charts, area charts and bar charts.',
+        'Added filters, sliders, hover tooltips and country selection controls for direct data exploration.',
+        'Combined tourism, GDP, aviation passenger and emissions datasets from sources including UNWTO, World Bank, OECD and aviation-related data providers.',
+        'Published the final project as a GitHub Pages demo with an embedded screencast.'
       ],
       outcome:
-        'The project became a polished data storytelling piece that demonstrates my interest in visual systems, interaction design, and front-end engineering.',
+        'The project became a polished interactive visualization and was featured in the course hall of fame, reflecting its strength as a data storytelling and front-end engineering project.',
       learnings: [
         'Good visualization is about reducing cognitive load, not adding more charts.',
-        'Interaction design can make complex datasets feel more approachable.',
-        'D3 and React work well together when responsibilities are clearly separated.'
-      ]
-    }
-  },
-  {
-    slug: 'ar-navigation',
-    title: 'AR Navigation',
-    thumbnail: { variant: 'ar-frame', label: 'AR wayfinding', tone: 'university' },
-    eyebrow: 'Augmented Reality Navigation',
-    source: 'university',
-    category: 'University / AR Project',
-    summary:
-      'A Unity-based augmented reality indoor navigation prototype that blends virtual directional guides with physical university spaces.',
-    tech: ['C#', 'Unity3D', 'Vuforia', 'ARKit'],
-    metrics: ['Indoor navigation prototype', 'AR spatial guidance', 'Unity + Vuforia workflow'],
-    links: [
-      {
-        label: 'View Demo',
-        href: 'https://drive.google.com/file/d/1qAqIh2G7KbHoa40-tNDVO4BrpBDLM427/view?usp=sharing',
-        type: 'demo'
-      }
-    ],
-    readme: {
-      overview:
-        'AR Navigation is an augmented reality indoor navigation application designed to help users move through physical space using virtual directional cues.',
-      problem:
-        'Indoor navigation can be difficult when GPS is unreliable or unavailable. The goal was to explore how AR overlays could make wayfinding more intuitive inside a university environment.',
-      approach: [
-        'Built the prototype in Unity using C#.',
-        'Used Vuforia and ARKit workflows for AR interaction and spatial anchoring.',
-        'Designed visual guides that could sit naturally on top of the physical environment.',
-        'Tested the experience around clarity, orientation, and user guidance.'
-      ],
-      outcome:
-        'The project shows my interest in spatial computing, Unity development, and interfaces that connect digital systems with real-world environments.',
-      learnings: [
-        'AR navigation needs visual clarity more than visual complexity.',
-        'Spatial interfaces require constant attention to user orientation.',
-        'Unity is a strong environment for quickly prototyping embodied interfaces.'
-      ]
-    }
-  },
-  {
-    slug: 'galactic-survivor',
-    title: 'Galactic Survivor',
-    thumbnail: { variant: 'galaxy', label: 'Game loop', tone: 'personal' },
-    eyebrow: 'Unity 3D Game',
-    source: 'personal',
-    category: 'Personal Project',
-    summary:
-      'A C# and Unity3D game prototype built around thrust, obstacle avoidance, and a clean core gameplay loop.',
-    tech: ['C#', 'Unity3D', 'Game Design'],
-    metrics: ['Playable web build', 'Physics-based movement', 'Core loop design'],
-    links: [
-      {
-        label: 'Play Game',
-        href: 'https://omisha99.github.io/Galactic-Survivor/',
-        type: 'demo'
-      }
-    ],
-    readme: {
-      overview:
-        'Galactic Survivor is a Unity-based 3D game prototype where the player guides a rocket from one point to another using thrust while avoiding obstacles.',
-      problem:
-        'The goal was to build a complete, focused gameplay loop rather than a large unfinished game. I wanted the experience to be understandable quickly, mechanically responsive, and simple enough to polish within scope.',
-      approach: [
-        'Implemented the core movement loop in C# using Unity physics.',
-        'Designed obstacle layouts around timing, thrust control, and recovery.',
-        'Built a playable web version to make the project easy to share.',
-        'Focused on clarity of controls and immediate feedback.'
-      ],
-      outcome:
-        'The project demonstrates my foundation in Unity, C#, gameplay mechanics, and interactive 3D experiences.',
-      learnings: [
-        'A small, complete gameplay loop is stronger than a large unfinished prototype.',
-        'Physics-based interaction requires careful tuning and repeated playtesting.',
-        'Simple mechanics can still communicate strong technical execution.'
+        'Interactive maps are strongest when paired with focused detail views and trend charts.',
+        'D3 and React work well together when React manages state and D3 manages drawing logic.',
       ]
     }
   },
@@ -357,7 +288,83 @@ export const projects = [
         'Good tools make quality checks easier to run, understand, and trust.'
       ]
     }
-  }
+  },
+  {
+    slug: 'ar-navigation',
+    title: 'AR Navigation',
+    thumbnail: { variant: 'ar-frame', label: 'AR wayfinding', tone: 'university' },
+    eyebrow: 'Augmented Reality Navigation',
+    source: 'personal',
+    category: 'Personal Project',
+    summary:
+      'A Unity-based augmented reality indoor navigation prototype that blends virtual directional guides with physical university spaces.',
+    tech: ['C#', 'Unity3D', 'Vuforia', 'ARKit'],
+    metrics: ['Indoor navigation prototype', 'AR spatial guidance', 'Unity + Vuforia workflow'],
+    links: [
+      {
+        label: 'View Demo',
+        href: 'https://drive.google.com/file/d/1qAqIh2G7KbHoa40-tNDVO4BrpBDLM427/view?usp=sharing',
+        type: 'demo'
+      }
+    ],
+    readme: {
+      overview:
+        'AR Navigation is an augmented reality indoor navigation application designed to help users move through physical space using virtual directional cues.',
+      problem:
+        'Indoor navigation can be difficult when GPS is unreliable or unavailable. The goal was to explore how AR overlays could make wayfinding more intuitive inside a university environment.',
+      approach: [
+        'Built the prototype in Unity using C#.',
+        'Used Vuforia and ARKit workflows for AR interaction and spatial anchoring.',
+        'Designed visual guides that could sit naturally on top of the physical environment.',
+        'Tested the experience around clarity, orientation, and user guidance.'
+      ],
+      outcome:
+        'The project shows my interest in spatial computing, Unity development, and interfaces that connect digital systems with real-world environments.',
+      learnings: [
+        'AR navigation needs visual clarity more than visual complexity.',
+        'Spatial interfaces require constant attention to user orientation.',
+        'Unity is a strong environment for quickly prototyping embodied interfaces.'
+      ]
+    }
+  },
+  {
+    slug: 'galactic-survivor',
+    title: 'Galactic Survivor',
+    thumbnail: { variant: 'galaxy', label: 'Game loop', tone: 'personal' },
+    eyebrow: 'Unity 3D Game',
+    source: 'personal',
+    category: 'Personal Project',
+    summary:
+      'A C# and Unity3D game prototype built around thrust, obstacle avoidance, and a clean core gameplay loop.',
+    tech: ['C#', 'Unity3D', 'Game Design'],
+    metrics: ['Playable web build', 'Physics-based movement', 'Core loop design'],
+    links: [
+      {
+        label: 'Play Game',
+        href: 'https://omisha99.github.io/Galactic-Survivor/',
+        type: 'demo'
+      }
+    ],
+    readme: {
+      overview:
+        'Galactic Survivor is a Unity-based 3D game prototype where the player guides a rocket from one point to another using thrust while avoiding obstacles.',
+      problem:
+        'The goal was to build a complete, focused gameplay loop rather than a large unfinished game. I wanted the experience to be understandable quickly, mechanically responsive, and simple enough to polish within scope.',
+      approach: [
+        'Implemented the core movement loop in C# using Unity physics.',
+        'Designed obstacle layouts around timing, thrust control, and recovery.',
+        'Built a playable web version to make the project easy to share.',
+        'Focused on clarity of controls and immediate feedback.'
+      ],
+      outcome:
+        'The project demonstrates my foundation in Unity, C#, gameplay mechanics, and interactive 3D experiences.',
+      learnings: [
+        'A small, complete gameplay loop is stronger than a large unfinished prototype.',
+        'Physics-based interaction requires careful tuning and repeated playtesting.',
+        'Simple mechanics can still communicate strong technical execution.'
+      ]
+    }
+  },
 ];
 
 export function getProjectBySlug(slug) {
