@@ -18,18 +18,25 @@ export default function Navbar({ theme, toggleTheme }) {
     const sections = ['hero', 'about', 'experience', 'projects', 'skills', 'contact'];
 
     const handleScroll = () => {
-      const current = sections.find((id) => {
+      const scrollPosition = window.scrollY + window.innerHeight * 0.42;
+
+      let current = 'hero';
+
+      sections.forEach((id) => {
         const section = document.getElementById(id);
-        if (!section) return false;
-        const rect = section.getBoundingClientRect();
-        return rect.top <= 140 && rect.bottom >= 140;
+        if (!section) return;
+
+        if (section.offsetTop <= scrollPosition) {
+          current = id;
+        }
       });
 
-      if (current) setActiveId(current);
+      setActiveId(current);
     };
 
     handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
