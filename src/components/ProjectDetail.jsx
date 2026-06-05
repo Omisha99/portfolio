@@ -107,7 +107,23 @@ export default function ProjectDetail() {
             </div>
           </aside>
         </header>
+        {project.gallery?.length > 0 && (
+            <section className="project-render-gallery" data-aos="fade-up">
+              <div className="project-render-gallery-header">
+                <p className="section-kicker">Rendered Output</p>
+                {/* <h2>Results from the renderer</h2> */}
+              </div>
 
+              <div className="project-render-grid">
+                {project.gallery.map((image) => (
+                  <figure className="project-render-card" key={image.src}>
+                    <img src={image.src} alt={image.alt} />
+                    <figcaption>{image.caption}</figcaption>
+                  </figure>
+                ))}
+              </div>
+            </section>
+          )}
         <div className="project-reader-body">
           <aside className="project-reader-toc" aria-label="Project sections">
             <a href="#overview">Overview</a>

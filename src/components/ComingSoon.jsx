@@ -11,7 +11,7 @@ export default function ComingSoon() {
   return (
     <section className="glitch-mode-gal">
     <button onClick={() => navigate("/glitch")} className="glitch-exit-gal">
-    Back to Glitch 👈
+    ← Back to Glitch
     </button>
     <h2 className="glitch-heading"> ✨ Prototype in the Lab</h2>
 

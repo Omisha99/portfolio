@@ -5,7 +5,8 @@ import '../App.css';
 const featuredProjectSlugs = [
   'synaptica-ai',
   'plant-viability-cv-system',
-  'google-docs-assistant',
+  // 'google-docs-assistant',
+  'voice-ai-customer-support-bot',
 ];
 
 const featuredProjects = featuredProjectSlugs

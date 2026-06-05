@@ -40,7 +40,7 @@ export default function Contact() {
           </h2>
 
           <p className="contact-text contact-minimal-text">
-            I’m open to AI/ML engineering roles, creative AI collaborations, product prototypes,
+            I’m open to AI/ML engineering roles, creative AI collaborations, product prototypes
             and conversations about turning ambitious ideas into useful systems.
           </p>
 
@@ -64,7 +64,7 @@ export default function Contact() {
               <FaGithub />
             </a>
             <a
-              href="https://drive.google.com/file/d/1KvstXP2beLIyj9ptbu7pVHbAdSxfWuVP/view?usp=sharing"
+              href="https://drive.google.com/file/d/1OLzuxHuMGDQI-GSjZzFP5DHu0Gz2DHAG/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Resume"
