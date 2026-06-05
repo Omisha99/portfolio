@@ -39,9 +39,16 @@ export default function ProjectGallery() {
     <main className="project-gallery-page project-gallery-page-visual">
       <section className="project-gallery-shell" data-aos="fade-up">
         <nav className="project-gallery-topbar" aria-label="Project gallery navigation">
-          <Link className="project-reader-back" to="/#projects">
+          {/* <Link className="project-reader-back" to="/#projects">
             ← Back to portfolio
-          </Link>
+          </Link> */}
+          <Link
+              className="project-reader-back"
+              to="/"
+              state={{ scrollTo: 'projects' }}
+            >
+              ← Back to portfolio
+            </Link>
         </nav>
 
         <header className="project-gallery-hero project-gallery-hero-visual">

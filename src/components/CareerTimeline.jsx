@@ -107,9 +107,17 @@ export default function CareerTimeline() {
     <main className="career-page career-page-split">
       <div className="career-shell">
         <div className="career-topbar">
-          <Link className="project-reader-back career-back-link" to="/#experience">
+          {/* <Link className="project-reader-back career-back-link" to="/#experience">
             ← Back to Experience
-          </Link>
+          </Link> */}
+            <Link
+              className="project-reader-back"
+              to="/"
+              state={{ scrollTo: 'experience' }}
+            >
+              ← Back to Experience
+            </Link>
+    
           <span className="career-page-label">Full Path</span>
         </div>
 

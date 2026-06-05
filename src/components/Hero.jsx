@@ -5,8 +5,20 @@ import avatarLight from '../assets/avatar-light.png';
 export default function Hero({ theme }) {
   const isLight = theme === 'light';
 
+  const scrollToSection = (id) => {
+  const section = document.getElementById(id);
+  if (!section) return;
+
+  section.scrollIntoView({
+    behavior: 'smooth',
+    block: 'start',
+  });
+
+  window.history.replaceState(null, '', window.location.pathname);
+};
+
   return (
-    <section className="hero-section">
+    <section id="hero" className="hero-section">
       <div className="hero-content hero-centered">
         <div className="hero-avatar-shell" aria-label="Omisha avatar">
           <img
@@ -40,12 +52,27 @@ export default function Hero({ theme }) {
         </p>
 
         <div className="hero-actions">
-          <a href="#projects" className="hero-button">
+          {/* <a href="#projects" className="hero-button">
             View My Work
           </a>
           <a href="#contact" className="hero-button secondary">
             Let’s Connect
-          </a>
+          </a> */}
+          <button
+            type="button"
+            className="hero-button"
+            onClick={() => scrollToSection('projects')}
+          >
+            View My Work
+          </button>
+
+          <button
+            type="button"
+            className="hero-button secondary"
+            onClick={() => scrollToSection('contact')}
+          >
+            Let’s Connect
+          </button>
         </div>
       </div>
     </section>

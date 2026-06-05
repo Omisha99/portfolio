@@ -78,26 +78,30 @@ function ScrollToHashElement() {
   const location = useLocation();
 
   useEffect(() => {
-    if (!location.hash) {
+    const targetFromState = location.state?.scrollTo;
+    const targetFromHash = location.hash ? location.hash.replace('#', '') : null;
+    const target = targetFromState || targetFromHash;
+
+    if (!target) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
 
-    const id = location.hash.replace('#', '');
-
     const scrollTimer = window.setTimeout(() => {
-      const element = document.getElementById(id);
+      const element = document.getElementById(target);
 
       if (element) {
         element.scrollIntoView({
           behavior: 'smooth',
           block: 'start',
         });
+
+        window.history.replaceState(null, '', window.location.pathname);
       }
-    }, 80);
+    }, 100);
 
     return () => window.clearTimeout(scrollTimer);
-  }, [location.pathname, location.hash]);
+  }, [location.pathname, location.hash, location.state]);
 
   return null;
 }

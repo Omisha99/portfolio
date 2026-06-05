@@ -38,7 +38,12 @@ export default function Projects() {
             <Link
               key={project.slug}
               to={`/projects/${project.slug}`}
-              state={{ backTo: '/#projects', backLabel: 'Back to Featured Projects' }}
+              // state={{ backTo: '/#projects', backLabel: 'Back to Featured Projects' }}
+              state={{
+                backTo: '/',
+                backLabel: 'Back to Featured Projects',
+                backState: { scrollTo: 'projects' }
+              }}
               className="project-card project-card-clickable project-card-link featured-project-card"
               aria-label={`Open ${project.title} project writeup`}
             >

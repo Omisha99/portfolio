@@ -3,14 +3,21 @@ import { FaMoon, FaSun , FaFileDownload} from 'react-icons/fa';
 import '../App.css';
 import ThemeToggle from './ThemeToggle';
 
-const navItems = [
-  { href: '#about', label: 'About' },
-  { href: '#experience', label: 'Experience' },
-  { href: '#projects', label: 'Projects' },
-  { href: '#skills', label: 'Skills' },
-  { href: '#contact', label: 'Contact' },
-];
+// const navItems = [
+//   { href: '#about', label: 'About' },
+//   { href: '#experience', label: 'Experience' },
+//   { href: '#projects', label: 'Projects' },
+//   { href: '#skills', label: 'Skills' },
+//   { href: '#contact', label: 'Contact' },
+// ];
 
+const navItems = [
+  { id: 'about', label: 'About' },
+  { id: 'experience', label: 'Experience' },
+  { id: 'projects', label: 'Projects' },
+  { id: 'skills', label: 'Skills' },
+  { id: 'contact', label: 'Contact' },
+];
 export default function Navbar({ theme, toggleTheme }) {
   const [activeId, setActiveId] = useState('hero');
 
@@ -40,16 +47,36 @@ export default function Navbar({ theme, toggleTheme }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (!section) return;
+
+    section.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+
+    window.history.replaceState(null, '', window.location.pathname);
+  };
+
   return (
     <nav className="navbar" aria-label="Primary navigation">
-      <a href="#hero" className="nav-logo" aria-label="Go to hero section">
+      {/* <a href="#hero" className="nav-logo" aria-label="Go to hero section">
         <span className="nav-mark">OS</span>
-        {/* <span className="nav-name">Omisha</span> */}
-      </a>
+        {/* <span className="nav-name">Omisha</span> * /}
+      </a> */}
+      <button
+        type="button"
+        className="nav-logo nav-button-reset"
+        aria-label="Go to hero section"
+        onClick={() => scrollToSection('hero')}
+      >
+        <span className="nav-mark">OS</span>
+      </button>
 
       <div className="nav-right">
         <ul className="nav-links">
-          {navItems.map((item) => {
+          {/* {navItems.map((item) => {
             const id = item.href.replace('#', '');
             return (
               <li key={item.href}>
@@ -58,7 +85,18 @@ export default function Navbar({ theme, toggleTheme }) {
                 </a>
               </li>
             );
-          })}
+          })} */}
+          {navItems.map((item) => (
+                <li key={item.id}>
+                  <button
+                    type="button"
+                    className={activeId === item.id ? 'nav-link nav-button active' : 'nav-link nav-button'}
+                    onClick={() => scrollToSection(item.id)}
+                  >
+                    {item.label}
+                  </button>
+                </li>
+              ))}
         </ul>
          <a
             className="nav-resume"
