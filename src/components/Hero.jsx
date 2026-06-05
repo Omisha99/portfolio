@@ -27,17 +27,16 @@ export default function Hero({ theme }) {
           />
         </div>
 
+          {/* <p className="hero-eyebrow">Engineer at heart, Artist by instinct</p> */}
         <h1 className="hero-title">Hi, I’m Omisha</h1>
 
         <p className="hero-tags">
-          Machine Learning Engineer <span>•</span> Creative Technologist{' '}
-          <span>•</span> Digital Artist <span>•</span> 3D Enthusiast
+          AI/ML Engineer <span>•</span> LLMs & Agentic Workflows <span>•</span> Creative AI Systems <span>•</span> 3D Graphics
         </p>
 
         <p className="hero-description">
-          Engineer at heart, artist by instinct — exploring the edges of machine
-          learning to build adaptive systems that span pixels, prompts, voices,
-          and real-world frontiers.
+          Building applied AI systems across language, vision, voice and creative tools - 
+          spanning LLM workflows, agentic and multimodal systems, generative tools and 3D production pipelines.
         </p>
 
         <div className="hero-actions">

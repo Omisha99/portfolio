@@ -12,17 +12,18 @@ const experienceTabs = [
     eyebrow: 'Healthcare AI + Data Science',
     roleSummary: 'Data Science Intern',
     summary:
-      'Worked on AI-assisted analytics and data science workflows for healthcare operations, with a focus on practical, reliable, and interpretable systems.',
+      'Worked on AI-assisted analytics and data science workflows for healthcare operations, with a focus on practical, reliable and interpretable systems.',
     roles: [
       {
         title: 'Data Science Intern',
-        date: '2025',
+        date: 'Jun 2025 – Aug 2025',
       },
     ],
     focus: [
       'Built data workflows for operational analytics and decision support.',
-      'Explored AI-assisted tooling for faster analysis, reporting, and insight generation.',
-      'Worked in a healthcare setting where reliability, privacy, and interpretability matter.',
+      'Explored AI-assisted tooling for faster analysis, reporting and insight generation.',
+      'Built predictive models on healthcare membership data to analyze engagement patterns.',
+      'Performed exploratory data analysis (EDA) on large healthcare datasets to uncover key behavioral trends impacting member experience.',
     ],
     tags: ['Healthcare AI', 'Data Science', 'Analytics', 'ML Workflows'],
     projects: [],
@@ -38,11 +39,11 @@ const experienceTabs = [
       'Senior Machine Learning Engineer', 
       // → Machine Learning Engineer → Software Development Engineer → Software Graphics Intern',
     summary:
-      'Built AI products, ML tooling, game-tech systems, and artist-facing workflows across LLMs, voice AI, generative models, computer vision, and 3D pipelines.',
+      'Built AI products, ML tooling, game-tech systems and artist-facing workflows across LLMs, voice AI, generative models, computer vision and 3D pipelines.',
     roles: [
       {
         title: 'Senior Machine Learning Engineer',
-        date: 'Jan 2024 – Aug 2024',
+        date: 'Jan 2024 – Sept 2024',
       },
       {
         title: 'Machine Learning Engineer',
@@ -54,14 +55,14 @@ const experienceTabs = [
       },
       {
         title: 'Software Graphics Intern',
-        date: 'Jan 2020 – Jul 2021',
+        date: 'Jun 2020 – Aug 2021',
       },
     ],
     focus: [
-      'Built LLM-powered tools for document workflows, support automation, and internal productivity.',
-      'Developed voice AI, chatbot, and AI platform systems for product and game teams.',
-      'Created creative ML tooling using Stable Diffusion, ControlNet, image pipelines, and artist-facing automation.',
-      'Built graphics, Unity, mesh-processing, and 3D asset tooling for production workflows.',
+      'Developed voice AI, chatbot and AI platform systems for product and game teams.',
+      'Built LLM-powered tools for document workflows, support automation and internal productivity.',
+      'Created creative ML tooling using Stable Diffusion, ControlNet, image pipelines and artist-facing automation.',
+      'Built graphics, Unity, mesh-processing and 3D asset tooling for production workflows.',
     ],
     tags: [
       'LLMs',
@@ -79,14 +80,14 @@ const experienceTabs = [
       },
       {
         label: 'Voice AI Chatbot',
-        slug: 'voice-ai-support-chatbot',
+        slug: 'voice-ai-customer-support-bot',
       },
       {
-        label: 'AAA Cricket AI Platform',
-        slug: 'aaa-cricket-ai-platform',
+        label: 'AAA Cricket Content Automation Platform',
+        slug: 'cricket-content-automation',
       },
       {
-        label: 'Creative ML-Art Tooling',
+        label: 'Generative AI/ML-Art Pipeline',
         slug: 'creative-ml-art-pipeline',
       },
       {

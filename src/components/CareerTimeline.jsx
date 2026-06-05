@@ -8,13 +8,25 @@ const timelineItems = [
     id: 'uofu-grad',
     track: 'education',
     icon: <FaGraduationCap />,
-    year: '2024–2025',
-    label: 'Graduate',
+    year: '2024–2026',
+    label: 'Master of Science',
     title: 'University of Utah',
-    subtitle: 'M.S. Computer Science + Deep Learning in AI & Robotics Graduate Certificate',
+    subtitle: 'M.S. Computer Science',
     body:
       'Formalized my AI foundation through graduate work in Machine Learning, Deep Learning, Neuro-Symbolic Modeling, NLP, Interactive Computer Graphics and applied ML systems.',
     tags: ['Graduate CS', 'Machine Learning', 'Deep Learning', 'Research Projects'],
+  },
+  {
+    id: 'uofu-grad',
+    track: 'education',
+    icon: <FaGraduationCap />,
+    year: '2025–2026',
+    label: 'Graduate Certificate',
+    title: 'University of Utah',
+    subtitle: 'Deep Learning in AI & Robotics',
+    // body:
+    //   'Formalized my AI foundation through graduate work in Machine Learning, Deep Learning, Neuro-Symbolic Modeling, NLP, Interactive Computer Graphics and applied ML systems.',
+    tags: ['Machine Learning', 'Deep Learning', 'Research Projects'],
   },
   {
     id: 'kaiser',
@@ -25,7 +37,7 @@ const timelineItems = [
     title: 'Kaiser Permanente',
     subtitle: 'Data Science Intern',
     body:
-      'Applied AI and data science to healthcare operations, focusing on analytics workflows, stakeholder-facing insight, and practical systems where reliability and interpretability matter.',
+      'Applied AI and data science to healthcare operations, focusing on analytics workflows and stakeholder-facing insight.',
     tags: ['Healthcare AI', 'Data Science', 'Analytics', 'Responsible AI'],
   },
   {
@@ -37,12 +49,12 @@ const timelineItems = [
     title: 'Hike Pvt. Ltd.',
     subtitle: 'AI systems, ML tooling, creative automation, and 3D production pipelines',
     body:
-      'Built AI products, ML tooling, game-tech systems, and artist-facing workflows across LLMs, voice AI, generative models, computer vision, Unity, and 3D pipelines.',
+      'Built AI products, ML tooling, game-tech systems and artist-facing workflows across LLMs, voice AI, generative models, computer vision, Unity and 3D pipelines.',
     roles: [
-      { title: 'Senior Machine Learning Engineer', date: 'Jan 2024 – Aug 2024' },
+      { title: 'Senior Machine Learning Engineer', date: 'Jan 2024 – Sept 2024' },
       { title: 'Machine Learning Engineer', date: 'Jan 2023 – Dec 2023' },
       { title: 'Software Development Engineer', date: 'Aug 2021 – Dec 2022' },
-      { title: 'Software Graphics Intern', date: 'Jan 2020 – Jul 2021' },
+      { title: 'Software Graphics Intern', date: 'Jun 2020 – Aug 2021' },
     ],
     tags: ['LLMs', 'Voice AI', 'Creative AI', 'Game AI', 'Computer Vision', 'Unity', '3D Tooling'],
   },

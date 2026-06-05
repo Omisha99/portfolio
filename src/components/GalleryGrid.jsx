@@ -11,7 +11,7 @@ export default function GalleryGrid({ title, images, id }) {
   return (
     <section className="glitch-mode-gal" id={id}>
       <button onClick={() => navigate("/glitch")} className="glitch-exit-gal">
-      Back to Glitch 👈
+      ← Back to Glitch
       </button>
       <h2 className="glitch-heading">{title}</h2>
 
@@ -28,7 +28,7 @@ export default function GalleryGrid({ title, images, id }) {
         ))}
       </div>
       <button onClick={() => navigate("/glitch")} className="glitch-exit-gal">
-      Back to Glitch 👈
+      ← Back to Glitch
       </button>
 
       {selected && (
