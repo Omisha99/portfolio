@@ -47,10 +47,22 @@ export default function ProjectDetail() {
   return (
     <main className="project-detail-page project-reader-page">
       <article className="project-reader-shell">
-        <nav className="project-reader-topbar" aria-label="Project navigation">
+        {/* <nav className="project-reader-topbar" aria-label="Project navigation">
           <Link to={backLink.to} className="project-reader-back">
             ← {backLink.label}
           </Link>
+        </nav> */}
+        <nav className="project-reader-topbar" aria-label="Project navigation">
+          {/* <Link className="project-reader-back" to="/#projects">
+            ← Back to portfolio
+          </Link> */}
+          <Link
+              className="project-reader-back"
+              to={backLink.to}
+              state={{ scrollTo: 'projects' }}
+            >
+              ← {backLink.label}
+            </Link>
         </nav>
 
         <header className="project-reader-hero">
