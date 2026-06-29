@@ -68,7 +68,12 @@ export const projects = [
     links: [
       {
         label: 'Read Paper',
-        href: 'https://drive.google.com/file/d/1Nhmzc8vNtm9nRR7XetRcEZaxFVTUmlt1/view?usp=sharing',
+        href: 'https://www-old.cs.utah.edu/docs/techreports/2026/UUCS-26-002.pdf',
+        type: 'paper'
+      },
+      {
+        label: 'Poster',
+        href: 'https://drive.google.com/file/d/1ePF7mLDtctDS4My8JOsJWMokDob_iHqU/view?usp=sharing',
         type: 'paper'
       }
     ],
