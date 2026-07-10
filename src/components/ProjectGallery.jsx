@@ -55,8 +55,10 @@ export default function ProjectGallery() {
           <p className="section-kicker">Project archive</p>
           <h1 className="project-gallery-title">Project Gallery</h1>
           <p className="project-gallery-intro">
-            A visual archive of research, production AI systems, creative tooling,
-            data visualization, and interactive projects.
+            A curated archive of research-facing AI systems, production ML tools, 
+            generative AI workflows, data visualization and interactive engineering projects.
+            {/* A visual archive of research, production AI systems, creative tooling,
+            data visualization, and interactive projects. */}
           </p>
         </header>
 

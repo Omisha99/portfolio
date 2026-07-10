@@ -101,7 +101,7 @@ export const projects = [
   {
     slug: 'travel-orb',
     title: 'Travel Orb',
-    thumbnail: { variant: 'orbital-map', label: 'Travel data', tone: 'university' },
+    thumbnail: { variant: 'orbital-map', label: 'Data Visualization', tone: 'university' },
     eyebrow: 'Interactive Data Visualization',
     source: 'university',
     category: 'Course / University Project',
@@ -204,7 +204,7 @@ export const projects = [
   {
    slug: 'voice-ai-customer-support-bot',
    title: 'Voice AI Customer Support Chatbot',
-   thumbnail: { variant: 'chat', label: 'AI support', tone: 'product' },
+   thumbnail: { variant: 'chat', label: 'AI Voice Agent', tone: 'product' },
    eyebrow: 'LLM Agents + Voice AI + Full-Stack App',
    source: 'hike',
    category: 'Hike / Production AI Tooling',
@@ -289,7 +289,7 @@ export const projects = [
   {
   slug: 'cricket-content-automation',
   title: 'AAA Cricket Content Automation Platform',
-  thumbnail: { variant: 'dashboard', label: 'LiveOps console', tone: 'product' },
+  thumbnail: { variant: 'dashboard', label: 'Dynamic Content Generation', tone: 'product' },
   eyebrow: 'Full-Stack Automation + Dynamic Content Generation',
   source: 'hike',
   category: 'Hike / Production AI Tooling',
@@ -338,7 +338,7 @@ export const projects = [
   {
     slug: 'creative-ml-art-pipeline',
     title: 'Generative AI ML-Art Pipeline',
-    thumbnail: { variant: 'creative-canvas', label: 'ML art', tone: 'hike' },
+    thumbnail: { variant: 'creative-canvas', label: 'Generative AI', tone: 'hike' },
     eyebrow: 'Generative AI + Artist Tooling',
     source: 'hike',
     category: 'Hike / Production AI Tooling',
@@ -369,7 +369,7 @@ export const projects = [
   {
     slug: '3d-asset-qa-automation',
     title: '3D Asset QA Automation - Unity',
-    thumbnail: { variant: 'mesh', label: '3D pipeline', tone: 'hike' },
+    thumbnail: { variant: 'mesh', label: '3D QA Pipeline', tone: 'hike' },
     eyebrow: 'Unity Graphics Tooling + Pipeline Automation',
     source: 'hike',
     category: 'Hike / Production Tooling',
