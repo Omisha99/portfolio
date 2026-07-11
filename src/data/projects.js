@@ -111,13 +111,18 @@ export const projects = [
     metrics: ['Interactive globe and choropleth maps', '1995-2022 international tourist trip data', '30% better comprehension goal', 'Published web demo'],
     links: [
       {
-        label: 'View Project',
+        label: 'Website',
         href: 'https://dataviscourse2024.github.io/travel-orb/',
         type: 'demo'
       },
       {
         label: 'Course Hall of Fame',
         href: 'https://www.dataviscourse.net/2025/fame/#:~:text=Mention%20Project%20Video-,TravelOrb',
+        type: 'external'
+      },
+      {
+        label: 'GitHub',
+        href: 'https://github.com/Omisha99/travel-orb',
         type: 'external'
       }
     ],
