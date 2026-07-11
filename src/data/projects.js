@@ -75,6 +75,11 @@ export const projects = [
         label: 'Poster',
         href: 'https://drive.google.com/file/d/1ePF7mLDtctDS4My8JOsJWMokDob_iHqU/view?usp=sharing',
         type: 'paper'
+      },
+      {
+      label: 'Utah AI Convergence Awards',
+      href: 'https://www.linkedin.com/posts/utahcoe_congratulations-to-our-ai-convergence-lightning-activity-7478138039987503104-M9n9?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC0NXnEBVAvUSOA0oe4nzaZZ09Ec366D_9o',
+      type: 'external'
       }
     ],
     readme: {
@@ -90,8 +95,12 @@ export const projects = [
         'Integrated the pipeline into a FastAPI backend and Gradio interface for image upload, threshold control, overlay visualization and JSON output.'
       ],
       outcome:
-      'The system achieved 96.74% cell-level classification accuracy and 6.01 percentage points mean absolute error at the tray level, making the workflow more consistent and scalable.',
-      learnings: [
+        'The system achieved 96.74% cell-level classification accuracy and 6.01 percentage points mean absolute error at the tray level, making the workflow more consistent and scalable.',
+      
+      recognition:
+        'Presented at Utah AI Convergence 2026 and received 1st Place in the lightning talk category. The related paper has also been accepted for presentation and inclusion at IEEE SMC 2026.',
+      
+        learnings: [
         'Accurate tray rectification and grid recovery are critical because small spatial errors can affect many downstream cell predictions.',
         'Confidence-gated fallback logic can make a vision pipeline more robust when labeled data is limited across tray types.',
         'Per-cell structured outputs and visual overlays make model behavior easier to inspect, debug and communicate to users.'

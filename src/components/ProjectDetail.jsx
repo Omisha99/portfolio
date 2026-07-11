@@ -142,6 +142,7 @@ export default function ProjectDetail() {
             <a href="#problem">Problem</a>
             <a href="#approach">Approach</a>
             <a href="#outcome">Outcome</a>
+            {project.readme?.recognition && <a href="#recognition">Recognition</a>}
             <a href="#learnings">Learnings</a>
           </aside>
 
@@ -174,8 +175,18 @@ export default function ProjectDetail() {
               <p>{project.readme.outcome}</p>
             </section>
 
+            {project.readme?.recognition && (
+              <section className="project-reader-section" id="recognition" data-aos="fade-up">
+                <span className="project-reader-section-number">05</span>
+                <h2>Recognition</h2>
+                <p>{project.readme.recognition}</p>
+              </section>
+            )}
+
             <section className="project-reader-section" id="learnings">
-              <span className="project-reader-section-number">05</span>
+              <span className="project-reader-section-number">
+                {project.readme?.recognition ? '06' : '05'}
+              </span>
               <h2>What I learned</h2>
               <ul>
                 {project.readme.learnings.map((item) => (
