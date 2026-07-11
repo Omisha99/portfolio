@@ -31,6 +31,11 @@ export const projects = [
         label: 'Read Paper',
         href: 'https://drive.google.com/file/d/12PIRJ1gDDSck4XjKyyt8jNigltEtr8ik/view?usp=drive_link',
         type: 'paper'
+      },
+      {
+        label: 'GitHub',
+        href: 'https://github.com/Omisha99/SynapticaAI',
+        type: 'external'
       }
     ],
     readme: {
