@@ -18,6 +18,7 @@ import ProjectGallery from './components/ProjectGallery';
 import CareerTimeline from './components/CareerTimeline';
 import ThemeToggle from './components/ThemeToggle';
 import EasterEggPortal from './components/EasterEggPortal';
+import DigitalBusinessCard from './components/DigitalBusinessCard';
 
 
 import AOS from 'aos';
@@ -173,7 +174,8 @@ function App() {
       />
     )}
 
-    <EasterEggPortal />
+    {/* <EasterEggPortal /> */}
+    {location.pathname !== '/card' && <EasterEggPortal />}
 
     {isReturningFromGlitch && (
       <div className="reality-return-transition reality-return-transition-global" aria-hidden="true">
@@ -197,6 +199,7 @@ function App() {
       <Route path="/glitch/gai_art" element={<ComingSoon />} />
       <Route path="/glitch/photography" element={<Camera />} />
       <Route path="/glitch/opengl" element={<ComingSoon />} />
+      <Route path="/card" element={<DigitalBusinessCard />} />
     </Routes>
   </>
 );
