@@ -5264,3 +5264,315 @@ html.theme-transitioning *::after {
   }
 }
 
+/* ===== DIGITAL BUSINESS CARD ===== */
+
+.digital-card-page {
+  position: relative;
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  padding: 2rem;
+  background:
+    radial-gradient(circle at 18% 18%, color-mix(in srgb, var(--accent) 10%, transparent), transparent 18rem),
+    radial-gradient(circle at 84% 76%, color-mix(in srgb, var(--secondary) 10%, transparent), transparent 20rem),
+    linear-gradient(145deg, var(--bg), var(--bg-2));
+}
+
+.digital-card-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.11;
+  pointer-events: none;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(circle at center, black, transparent 72%);
+}
+
+.digital-card-shell {
+  position: relative;
+  z-index: 1;
+  width: min(520px, 100%);
+  overflow: hidden;
+  padding: clamp(1.6rem, 5vw, 2.4rem);
+  border: 1px solid color-mix(in srgb, var(--accent) 26%, var(--border));
+  border-radius: 34px;
+  text-align: center;
+  background:
+    radial-gradient(circle at 50% 0%, color-mix(in srgb, var(--accent) 10%, transparent), transparent 42%),
+    color-mix(in srgb, var(--surface) 86%, transparent);
+  box-shadow:
+    0 28px 90px var(--shadow),
+    0 0 0 1px color-mix(in srgb, var(--accent) 6%, transparent);
+  backdrop-filter: blur(20px) saturate(135%);
+}
+
+.digital-card-orb {
+  position: absolute;
+  z-index: -1;
+  border-radius: 999px;
+  filter: blur(28px);
+  opacity: 0.34;
+  pointer-events: none;
+}
+
+.digital-card-orb-one {
+  width: 11rem;
+  height: 11rem;
+  left: -4rem;
+  top: -4rem;
+  background: color-mix(in srgb, var(--accent) 44%, transparent);
+}
+
+.digital-card-orb-two {
+  width: 12rem;
+  height: 12rem;
+  right: -5rem;
+  bottom: -5rem;
+  background: color-mix(in srgb, var(--secondary) 42%, transparent);
+}
+
+.digital-card-avatar-wrap {
+  width: 9rem;
+  height: 9rem;
+  margin: 0 auto 1.2rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background:
+    linear-gradient(var(--surface-solid), var(--surface-solid)) padding-box,
+    linear-gradient(135deg, var(--primary), var(--secondary), var(--accent)) border-box;
+  border: 1px solid transparent;
+  box-shadow:
+    0 18px 52px color-mix(in srgb, var(--shadow) 78%, transparent),
+    0 0 34px color-mix(in srgb, var(--accent) 16%, transparent);
+}
+
+.digital-card-avatar {
+  width: 8.1rem;
+  height: 8.1rem;
+  display: block;
+  border-radius: 50%;
+  object-fit: cover;
+  image-rendering: pixelated;
+}
+
+.digital-card-kicker {
+  margin: 0 0 0.8rem;
+  color: var(--accent);
+  font-size: 0.74rem;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.digital-card-shell h1 {
+  margin: 0;
+  color: var(--text);
+  font-size: clamp(2.35rem, 8vw, 4rem);
+  font-weight: 760;
+  line-height: 0.98;
+  letter-spacing: -0.06em;
+}
+
+.digital-card-role {
+  margin: 0.8rem 0 0;
+  color: color-mix(in srgb, var(--primary) 74%, var(--accent));
+  font-size: clamp(1.12rem, 2.4vw, 1.35rem);
+  font-weight: 780;
+  letter-spacing: -0.025em;
+}
+
+.digital-card-summary {
+  max-width: 430px;
+  margin: 1.1rem auto 0;
+  color: color-mix(in srgb, var(--text-muted) 88%, var(--accent));
+  font-size: 0.98rem;
+  line-height: 1.72;
+}
+
+.digital-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1.35rem 0 0;
+}
+
+.digital-card-tags span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.85rem;
+  padding: 0.34rem 0.62rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: color-mix(in srgb, var(--primary) 72%, var(--accent));
+  background: var(--glass);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.digital-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.7rem;
+  margin: 1.6rem 0 0;
+}
+
+.digital-card-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.55rem;
+  padding: 0.62rem 1rem;
+  border: 1px solid color-mix(in srgb, var(--accent) 38%, var(--border));
+  border-radius: 999px;
+  color: var(--text);
+  background: color-mix(in srgb, var(--accent) 7%, var(--glass));
+  font-size: 0.9rem;
+  font-weight: 850;
+  transition:
+    transform 220ms ease,
+    color 220ms ease,
+    border-color 220ms ease,
+    background 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.digital-card-actions a:hover,
+.digital-card-actions a:focus-visible {
+  transform: translateY(-2px);
+  color: var(--text-soft);
+  border-color: color-mix(in srgb, var(--accent) 58%, var(--border));
+  background: color-mix(in srgb, var(--accent) 10%, var(--glass));
+  box-shadow: 0 14px 34px color-mix(in srgb, var(--accent) 12%, transparent);
+  outline: none;
+}
+
+.digital-card-home {
+  display: inline-flex;
+  margin-top: 1.35rem;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  font-weight: 800;
+}
+
+.digital-card-home:hover,
+.digital-card-home:focus-visible {
+  color: var(--accent);
+  outline: none;
+}
+
+@media (max-width: 560px) {
+  .digital-card-page {
+    padding: 1rem;
+  }
+
+  .digital-card-shell {
+    border-radius: 26px;
+  }
+
+  .digital-card-avatar-wrap {
+    width: 7.6rem;
+    height: 7.6rem;
+  }
+
+  .digital-card-avatar {
+    width: 6.8rem;
+    height: 6.8rem;
+  }
+
+  .digital-card-actions {
+    flex-direction: column;
+  }
+
+  .digital-card-actions a {
+    width: 100%;
+  }
+}
+
+.digital-card-avatar-wrap {
+  width: 9rem;
+  height: 9rem;
+  margin: 0 auto 1.2rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background:
+    linear-gradient(var(--surface-solid), var(--surface-solid)) padding-box,
+    linear-gradient(135deg, var(--primary), var(--secondary), var(--accent)) border-box;
+  border: 1px solid transparent;
+  box-shadow:
+    0 18px 52px color-mix(in srgb, var(--shadow) 78%, transparent),
+    0 0 34px color-mix(in srgb, var(--accent) 16%, transparent);
+}
+
+.digital-card-avatar-stack {
+  position: relative;
+  width: 8.1rem;
+  height: 8.1rem;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--surface-2);
+}
+
+.digital-card-avatar {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: inherit;
+  object-fit: cover;
+  image-rendering: pixelated;
+  transition:
+    opacity 520ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 520ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 520ms ease;
+}
+
+.digital-card-avatar-dark {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.digital-card-avatar-light {
+  opacity: 0;
+  transform: scale(1.035);
+}
+
+[data-theme="light"] .digital-card-avatar-dark {
+  opacity: 0;
+  transform: scale(1.035);
+}
+
+[data-theme="light"] .digital-card-avatar-light {
+  opacity: 1;
+  transform: scale(1);
+}
+
+[data-theme="dark"] .digital-card-avatar-dark {
+  opacity: 1;
+  transform: scale(1);
+}
+
+[data-theme="dark"] .digital-card-avatar-light {
+  opacity: 0;
+  transform: scale(1.035);
+}
+
+@media (max-width: 560px) {
+  .digital-card-avatar-wrap {
+    width: 7.6rem;
+    height: 7.6rem;
+  }
+
+  .digital-card-avatar-stack {
+    width: 6.8rem;
+    height: 6.8rem;
+  }
+}
